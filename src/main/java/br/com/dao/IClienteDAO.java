@@ -1,0 +1,18 @@
+package br.com.dao;
+
+import br.com.models.Cliente;
+
+import java.util.List;
+import java.util.Optional;
+
+public interface IClienteDAO {
+    Cliente save(Cliente cliente);
+    Cliente login(Cliente cliente);
+    Cliente  update(Cliente cliente);
+    void delete(int id);
+
+
+    List<Cliente> finAll();
+    Optional<Cliente> findById(int id);
+    List<Cliente> finByNome(String nome);
+}
