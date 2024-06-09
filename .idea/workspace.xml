@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="627e425d-b2e6-4f8a-86b4-48c7653f41da" name="Changes" comment="" />
+    <list default="true" id="627e425d-b2e6-4f8a-86b4-48c7653f41da" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/dao/ClienteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/dao/ClienteDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/models/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/models/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/models/Pagamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/enums/Pagamento.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -78,7 +84,7 @@
       <workItem from="1717887450502" duration="47000" />
       <workItem from="1717888051207" duration="2338000" />
       <workItem from="1717893401571" duration="1788000" />
-      <workItem from="1717956511755" duration="4924000" />
+      <workItem from="1717956511755" duration="8960000" />
     </task>
     <servers />
   </component>
@@ -92,6 +98,15 @@
           <properties class="java.lang.RuntimeException" package="java.lang" />
           <option name="timeStamp" value="2" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/dao/IClienteDAO.java</url>
+          <line>8</line>
+          <properties class="br.com.dao.IClienteDAO" method="save">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

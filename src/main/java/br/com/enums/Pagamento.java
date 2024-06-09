@@ -1,4 +1,4 @@
-package br.com.models;
+package br.com.enums;
 
 public enum Pagamento {
     PAGO,

@@ -2,7 +2,7 @@ package br.com.dao;
 
 import br.com.infra.ConnectionFactory;
 import br.com.models.Cliente;
-import br.com.models.Pagamento;
+import br.com.enums.Pagamento;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -11,11 +11,10 @@ import java.util.Optional;
 
 public class ClienteDAO implements IClienteDAO {
 
-
     @Override
     public Cliente save(Cliente cliente) {
         try (Connection connection = ConnectionFactory.getConnection()) {
-            String sql = "INSERT INTO Clientes(nome,email,senha,status_pagamento) VALUES(?,?,?,?)";
+            String sql = "INSERT INTO Clientes(nome,email,senha,pagamento) VALUES(?,?,?,?)";
             PreparedStatement preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS); //retornando o id para gnt  Statement.RETURN_GENERATED_KEYS
 
             preparedStatement.setString(1, cliente.getNome());
@@ -61,7 +60,7 @@ public class ClienteDAO implements IClienteDAO {
 
     @Override
     public List<Cliente> findAll() {
-        String sql = "SELECT id,nome,email,senha,status_pagamento FROM Clientes ";
+        String sql = "SELECT id,nome,email,senha,pagamento FROM Clientes ";
 
         List<Cliente> clientes = new ArrayList<>();
 
@@ -76,9 +75,9 @@ public class ClienteDAO implements IClienteDAO {
               String nome =   rs.getString("nome");
               String email =   rs.getString("email");
               String senha =   rs.getString("senha");
-              Pagamento status_pagamento =   Pagamento.valueOf(rs.getString("status_pagamento"));
+              Pagamento pagamento =   Pagamento.valueOf(rs.getString("pagamento"));
 
-              Cliente  cliente  = new Cliente(id,nome,email,senha,status_pagamento);
+              Cliente  cliente  = new Cliente(nome,email,senha,pagamento);
               clientes.add(cliente);
 
             }

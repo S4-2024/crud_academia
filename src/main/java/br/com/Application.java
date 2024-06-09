@@ -1,15 +1,11 @@
 package br.com;
 
 import br.com.dao.ClienteDAO;
-import br.com.dao.FuncionarioDAO;
 import br.com.models.Cliente;
-import br.com.models.Funcionario;
-import br.com.models.Pagamento;
+import br.com.enums.Pagamento;
 
 
-import java.util.List;
-
-import static br.com.models.Pagamento.valueOf;
+import static br.com.enums.Pagamento.valueOf;
 
 public class Application {
 
@@ -25,20 +21,34 @@ public class Application {
 
 
 
+//        FuncionarioDAO dao = new FuncionarioDAO();
+//
+//        String nome = "Jose Maria";
+//        String email = "josemara@gmail.com";
+//        String senha = "123456";
+//        String cpf = "123.456.789-00";
+//
+//        Funcionario funcionario = new Funcionario(nome,email,senha,cpf);
+//
+//        dao.save(funcionario);
+//
+//        System.out.println("Funcionario ID: " + funcionario.getId());
+//        System.out.println("Inserido: " + funcionario);
 
-        FuncionarioDAO dao = new FuncionarioDAO();
+        ClienteDAO dao = new ClienteDAO();
 
         String nome = "Jose Maria";
         String email = "josemara@gmail.com";
         String senha = "123456";
-        String cpf = "123.456.789-00";
+        Pagamento pagamento = valueOf("PAGO");
 
-        Funcionario funcionario = new Funcionario(nome,email,senha,cpf);
+        Cliente cliente = new Cliente(nome,email,senha,pagamento);
 
-        dao.save(funcionario);
+        dao.save(cliente);
 
-        System.out.println("Funcionario ID: " + funcionario.getId());
-        System.out.println("Inserido: " + funcionario);
+
+
+
 
 
     }
