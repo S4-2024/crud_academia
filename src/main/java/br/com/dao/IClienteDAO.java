@@ -12,7 +12,7 @@ public interface IClienteDAO {
     void delete(int id);
 
 
-    List<Cliente> finAll();
+    List<Cliente> findAll();
     Optional<Cliente> findById(int id);
     List<Cliente> finByNome(String nome);
 }

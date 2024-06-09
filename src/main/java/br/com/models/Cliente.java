@@ -14,6 +14,14 @@ public class Cliente {
         this.pagamento = pagamento;
     }
 
+    public Cliente(int id, String nome, String email, String senha, Pagamento pagamento) {
+        this.id = id;
+        this.nome = nome;
+        this.email = email;
+        this.senha = senha;
+        this.pagamento = pagamento;
+    }
+
     public int getId() {
         return id;
     }

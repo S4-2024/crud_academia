@@ -2,8 +2,10 @@ package br.com.dao;
 
 import br.com.infra.ConnectionFactory;
 import br.com.models.Cliente;
+import br.com.models.Pagamento;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,7 +23,7 @@ public class ClienteDAO implements IClienteDAO {
             preparedStatement.setString(3, cliente.getSenha());
             preparedStatement.setString(4, String.valueOf(cliente.getPagamento()));
 
-             int affectedRows = preparedStatement.executeUpdate();
+            int affectedRows = preparedStatement.executeUpdate();
 
             if (affectedRows == 0) {
                 throw new SQLException("Falha ao inserir cliente, nenhuma linha afetada.");
@@ -58,8 +60,34 @@ public class ClienteDAO implements IClienteDAO {
     }
 
     @Override
-    public List<Cliente> finAll() {
-        return null;
+    public List<Cliente> findAll() {
+        String sql = "SELECT id,nome,email,senha,status_pagamento FROM Clientes ";
+
+        List<Cliente> clientes = new ArrayList<>();
+
+        try (Connection connection = ConnectionFactory.getConnection()) {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+            preparedStatement.executeQuery();
+            ResultSet rs = preparedStatement.getResultSet();
+
+            while (rs.next()) {
+              int id =   rs.getInt("id");
+              String nome =   rs.getString("nome");
+              String email =   rs.getString("email");
+              String senha =   rs.getString("senha");
+              Pagamento status_pagamento =   Pagamento.valueOf(rs.getString("status_pagamento"));
+
+              Cliente  cliente  = new Cliente(id,nome,email,senha,status_pagamento);
+              clientes.add(cliente);
+
+            }
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return clientes;
     }
 
     @Override
