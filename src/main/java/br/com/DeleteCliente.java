@@ -7,6 +7,6 @@ public class DeleteCliente {
 
         ClienteDAO dao = new ClienteDAO();
         dao.delete(1);
-        
+
     }
 }

@@ -8,4 +8,9 @@ public interface IFuncionarioDAO {
     Funcionario update(Funcionario funcionario);
     void delete(Funcionario funcionario);
 
+
+    void setLoggedIn(boolean loggedIn);
+    void logOut();
+    void accesClienteList();
+    void accesClienteFicha();
 }
