@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="627e425d-b2e6-4f8a-86b4-48c7653f41da" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/DeleteCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/DeleteCliente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/dao/FuncionarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/dao/FuncionarioDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/dao/IFuncionarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/dao/IFuncionarioDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/models/Funcionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/models/Funcionario.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +84,7 @@
       <workItem from="1717888051207" duration="2338000" />
       <workItem from="1717893401571" duration="1788000" />
       <workItem from="1717956511755" duration="10447000" />
-      <workItem from="1718030963355" duration="12161000" />
+      <workItem from="1718030963355" duration="14324000" />
     </task>
     <servers />
   </component>
