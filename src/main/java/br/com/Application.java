@@ -5,6 +5,8 @@ import br.com.models.Cliente;
 import br.com.enums.Pagamento;
 
 
+import java.util.List;
+
 import static br.com.enums.Pagamento.valueOf;
 
 public class Application {
@@ -18,8 +20,6 @@ public class Application {
 //            System.out.println("nome" + cliente1.getNome());
 //            System.out.println("email" + cliente1.getEmail());
 //        }
-
-
 
 //        FuncionarioDAO dao = new FuncionarioDAO();
 //
@@ -35,21 +35,36 @@ public class Application {
 //        System.out.println("Funcionario ID: " + funcionario.getId());
 //        System.out.println("Inserido: " + funcionario);
 
-        ClienteDAO dao = new ClienteDAO();
-
-        String nome = "Jose Maria";
-        String email = "josemara@gmail.com";
-        String senha = "123456";
-        Pagamento pagamento = valueOf("PAGO");
-
-        Cliente cliente = new Cliente(nome,email,senha,pagamento);
-
-        dao.save(cliente);
-
-
+//        ClienteDAO dao = new ClienteDAO();
+//
+//        String nome = "Jose Maria";
+//        String email = "josemara@gmail.com";
+//        String senha = "123456";
+//        Pagamento pagamento = valueOf("PAGO");
+//
+//        Cliente cliente = new Cliente(nome,email,senha,pagamento);
+//
+//        dao.save(cliente);
 
 
 
+        ClienteDAO  dao = new ClienteDAO();
+        List<Cliente> clientes = dao.findAll();
+        int i = 1;
+
+        for(Cliente cliente : clientes){
+
+            System.out.println("Cliente #"+i);
+            System.out.println("ID: " + cliente.getId());
+            System.out.println("Nome: " + cliente.getNome());
+            System.out.println("Email: " + cliente.getEmail());
+            System.out.println("senha: " + cliente.getSenha());
+            System.out.println("Pagamneto: " + cliente.getPagamento());
+            System.out.println(" ");
+
+            i = i + 1 ;
+
+        }
 
     }
 

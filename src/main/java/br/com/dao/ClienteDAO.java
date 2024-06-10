@@ -75,7 +75,7 @@ public class ClienteDAO implements IClienteDAO {
               String nome =   rs.getString("nome");
               String email =   rs.getString("email");
               String senha =   rs.getString("senha");
-              Pagamento pagamento =   Pagamento.valueOf(rs.getString("pagamento"));
+              Pagamento pagamento = Pagamento.valueOf(rs.getString("pagamento"));
 
               Cliente  cliente  = new Cliente(nome,email,senha,pagamento);
               clientes.add(cliente);

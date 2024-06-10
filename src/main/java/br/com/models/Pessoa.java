@@ -12,6 +12,12 @@ public class Pessoa {
         this.senha = senha;
     }
 
+    public Pessoa(int id, String nome, String email, String senha) {
+        this.id = id;
+        this.nome = nome;
+        this.email = email;
+        this.senha = senha;
+    }
 
     public int getId() {
         return id;
