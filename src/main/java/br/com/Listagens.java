@@ -11,7 +11,7 @@ import static br.com.enums.Pagamento.valueOf;
 public class Listagens {
 
     public static void main(String[] args) {
-//          // -------------------- teste findAll
+//
 //        ClienteDAO clienteDAO = new ClienteDAO();
 //        List<Cliente> cliente = clienteDAO.findAll();
 //
