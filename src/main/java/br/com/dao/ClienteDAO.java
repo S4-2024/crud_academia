@@ -51,7 +51,7 @@ public class ClienteDAO implements IClienteDAO {
     @Override
     public Cliente update(Cliente cliente) {
         try (Connection connection = ConnectionFactory.getConnection()) {
-            String sql = " UPDATE Cliemtes SET nome = ?, email = ?, senha = ?, pagamento = ? WHERE id = ?";
+            String sql = " UPDATE Clientes SET nome = ?, email = ?, senha = ?, pagamento = ? WHERE id = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, cliente.getNome());
             preparedStatement.setString(2, cliente.getEmail());
