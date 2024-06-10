@@ -14,5 +14,5 @@ public interface IClienteDAO {
 
     List<Cliente> findAll();
     Optional<Cliente> findById(int id);
-    List<Cliente> finByNome(String nome);
+    List<Cliente> findByNome(String nome);
 }

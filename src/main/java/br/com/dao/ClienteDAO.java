@@ -50,7 +50,23 @@ public class ClienteDAO implements IClienteDAO {
 
     @Override
     public Cliente update(Cliente cliente) {
-        return null;
+        try (Connection connection = ConnectionFactory.getConnection()) {
+            String sql = " UPDATE Cliemtes SET nome = ?, email = ?, senha = ?, pagamento = ? WHERE id = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, cliente.getNome());
+            preparedStatement.setString(2, cliente.getEmail());
+            preparedStatement.setString(3, cliente.getSenha());
+            preparedStatement.setString(4, String.valueOf(cliente.getPagamento()));
+            preparedStatement.setInt(5, cliente.getId());
+           preparedStatement.executeUpdate();
+
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+
+        return cliente;
     }
 
     @Override
@@ -77,7 +93,7 @@ public class ClienteDAO implements IClienteDAO {
               String senha =   rs.getString("senha");
               Pagamento pagamento = Pagamento.valueOf(rs.getString("pagamento"));
 
-              Cliente  cliente  = new Cliente(nome,email,senha,pagamento);
+              Cliente  cliente  = new Cliente(id,nome,email,senha,pagamento);
               clientes.add(cliente);
 
             }
@@ -120,8 +136,35 @@ public class ClienteDAO implements IClienteDAO {
     }
 
     @Override
-    public List<Cliente> finByNome(String nome) {
-        return null;
+    public List<Cliente> findByNome(String nome) {
+        String sql = "SELECT id,nome,email,senha,pagamento FROM Clientes WHERE nome = ? ";
+
+        List<Cliente> clientes = new ArrayList<>();
+
+        try (Connection connection = ConnectionFactory.getConnection()) {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
+            preparedStatement.setString(1, nome);
+            preparedStatement.executeQuery();
+
+            ResultSet rs = preparedStatement.getResultSet();
+
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String Pnome =   rs.getString("nome");
+                String email =   rs.getString("email");
+                String senha =   rs.getString("senha");
+                Pagamento pagamento = Pagamento.valueOf(rs.getString("pagamento"));
+
+                Cliente  cliente  = new Cliente(id,Pnome,email,senha,pagamento);
+                clientes.add(cliente);
+
+            }
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return clientes;
     }
 
 

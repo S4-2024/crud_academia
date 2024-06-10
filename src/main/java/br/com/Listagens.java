@@ -2,17 +2,16 @@ package br.com;
 
 import br.com.dao.ClienteDAO;
 import br.com.models.Cliente;
-import br.com.enums.Pagamento;
 
 
 import java.util.List;
-import java.util.Optional;
 
 import static br.com.enums.Pagamento.valueOf;
 
-public class Application {
+public class Listagens {
 
     public static void main(String[] args) {
+//          // -------------------- teste findAll
 //        ClienteDAO clienteDAO = new ClienteDAO();
 //        List<Cliente> cliente = clienteDAO.findAll();
 //
@@ -47,9 +46,9 @@ public class Application {
 //
 //        dao.save(cliente);
 
+        // -------------------- teste findAll
 
-
-        ClienteDAO  dao = new ClienteDAO();
+//        ClienteDAO  dao = new ClienteDAO();
 //        List<Cliente> clientes = dao.findAll();
 //        int i = 1;
 //
@@ -64,23 +63,46 @@ public class Application {
 //            System.out.println(" ");
 //
 //            i = i + 1 ;
-
-         Optional<Cliente> clienteOptional = dao.findById(2);
-        if (clienteOptional.isPresent()) {
-            Cliente cliente = clienteOptional.get();
-            System.out.println("ID: " + cliente.getId());
-            System.out.println("Nome: " + cliente.getNome());
-        } else {
-            System.out.println("Cliente com o esse ID não existe!");
-        }
+//    }
 
 
-//         clienteOptional.ifPresent(cliente -> {
+        // -------------------- teste findByID
+
+//        ClienteDAO  dao = new ClienteDAO();
+//         Optional<Cliente> clienteOptional = dao.findById(2);
+//        if (clienteOptional.isPresent()) {
+//            Cliente cliente = clienteOptional.get();
 //            System.out.println("ID: " + cliente.getId());
 //            System.out.println("Nome: " + cliente.getNome());
-//         });
-        }
+//        } else {
+//            System.out.println("Cliente com o esse ID não existe!");
+//        }
 
+        // -------------------- teste findByName
+
+        ClienteDAO dao = new ClienteDAO();
+        List<Cliente> clientes = dao.findByNome("rosaSADSsd");
+
+        int i = 1;
+        for (Cliente cliente : clientes) {
+
+            System.out.println("Cliente #" + i);
+            System.out.println("ID: " + cliente.getId());
+            System.out.println("Nome: " + cliente.getNome());
+            System.out.println("Email: " + cliente.getEmail());
+            System.out.println("senha: " + cliente.getSenha());
+            System.out.println("Pagamneto: " + cliente.getPagamento());
+            System.out.println(" ");
+
+            i = i + 1;
+        }
     }
+
+
+
+
+
+
+}
 
 
