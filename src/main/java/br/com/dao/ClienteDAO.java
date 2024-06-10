@@ -65,7 +65,7 @@ public class ClienteDAO implements IClienteDAO {
         List<Cliente> clientes = new ArrayList<>();
 
         try (Connection connection = ConnectionFactory.getConnection()) {
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            PreparedStatement preparedStatement = connection.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
 
             preparedStatement.executeQuery();
             ResultSet rs = preparedStatement.getResultSet();
@@ -91,7 +91,32 @@ public class ClienteDAO implements IClienteDAO {
 
     @Override
     public Optional<Cliente> findById(int id) {
-        return Optional.empty();
+        String sql = "SELECT id,nome,email,senha,pagamento FROM Clientes  WHERE id=?";
+
+        Cliente  cliente = null;
+
+        try (Connection connection = ConnectionFactory.getConnection()) {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
+
+            preparedStatement.setInt(1, id);
+
+            ResultSet rs = preparedStatement.executeQuery();
+
+            while (rs.next()) {
+                int Pid =   rs.getInt("id");
+                String nome =   rs.getString("nome");
+                String email =   rs.getString("email");
+                String senha =   rs.getString("senha");
+                Pagamento pagamento = Pagamento.valueOf(rs.getString("pagamento"));
+
+                cliente  = new Cliente(Pid,nome,email,senha,pagamento);
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return  Optional.ofNullable(cliente);
     }
 
     @Override

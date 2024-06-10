@@ -8,9 +8,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/dao/ClienteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/dao/ClienteDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/enums/Pagamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/enums/Pagamento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/models/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/models/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/models/Pessoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/models/Pessoa.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +83,7 @@
       <workItem from="1717888051207" duration="2338000" />
       <workItem from="1717893401571" duration="1788000" />
       <workItem from="1717956511755" duration="10447000" />
-      <workItem from="1718030963355" duration="3147000" />
+      <workItem from="1718030963355" duration="6929000" />
     </task>
     <servers />
   </component>
@@ -100,15 +97,6 @@
           <properties class="java.lang.RuntimeException" package="java.lang" />
           <option name="timeStamp" value="2" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/dao/IClienteDAO.java</url>
-          <line>8</line>
-          <properties class="br.com.dao.IClienteDAO" method="save">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
