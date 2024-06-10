@@ -71,6 +71,18 @@ public class ClienteDAO implements IClienteDAO {
 
     @Override
     public void delete(int id) {
+        try (Connection connection = ConnectionFactory.getConnection()) {
+            String sql = " DELETE FROM Clientes WHERE id = ? ";
+
+            PreparedStatement preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            preparedStatement.setInt(1, id);
+            preparedStatement.executeUpdate();
+
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
 
     }
 
