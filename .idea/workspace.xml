@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="627e425d-b2e6-4f8a-86b4-48c7653f41da" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/AdicionarCliente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/UpdateCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/UpdateCliente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/dao/FuncionarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/dao/FuncionarioDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/infra/ConnectionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/infra/ConnectionFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,8 +42,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.AdicionarCliente.executor": "Run",
     "Application.Application.executor": "Run",
     "Application.DeleteCliente.executor": "Run",
+    "Application.Listagens.executor": "Run",
     "Application.UpdateCliente.executor": "Run",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -84,7 +89,7 @@
       <workItem from="1717888051207" duration="2338000" />
       <workItem from="1717893401571" duration="1788000" />
       <workItem from="1717956511755" duration="10447000" />
-      <workItem from="1718030963355" duration="14324000" />
+      <workItem from="1718030963355" duration="16390000" />
     </task>
     <servers />
   </component>
