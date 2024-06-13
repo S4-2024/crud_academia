@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="627e425d-b2e6-4f8a-86b4-48c7653f41da" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/AdicionarFuncionario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/functions/Agendamento.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/interfaces/IAgendamentoDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/interfaces/IAvaliacaoDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/dao/ClienteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/dao/ClienteDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/dao/FuncionarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/dao/FuncionarioDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/dao/IClienteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/interfaces/IClienteDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/dao/IFuncionarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/interfaces/IFuncionarioDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/functions/Avaliacao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/models/Funcionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/models/Funcionario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/models/Pessoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/models/Pessoa.java" afterDir="false" />
-    </list>
+    <list default="true" id="627e425d-b2e6-4f8a-86b4-48c7653f41da" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -107,6 +93,7 @@
       <workItem from="1718148325972" duration="335000" />
       <workItem from="1718235450399" duration="3355000" />
       <workItem from="1718283723177" duration="6448000" />
+      <workItem from="1718302224220" duration="320000" />
     </task>
     <servers />
   </component>
