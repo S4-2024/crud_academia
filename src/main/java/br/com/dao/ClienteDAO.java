@@ -1,6 +1,7 @@
 package br.com.dao;
 
 import br.com.infra.ConnectionFactory;
+import br.com.interfaces.IClienteDAO;
 import br.com.models.Cliente;
 import br.com.enums.Pagamento;
 
@@ -43,10 +44,6 @@ public class ClienteDAO implements IClienteDAO {
         return cliente;
     }
 
-    @Override
-    public Cliente login(Cliente cliente) {
-        return null;
-    }
 
     @Override
     public Cliente update(Cliente cliente) {

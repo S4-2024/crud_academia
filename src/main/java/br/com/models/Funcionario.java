@@ -4,12 +4,17 @@ import java.io.Serializable;
 
 public class Funcionario extends Pessoa{
     private  String cpf;
-    private boolean isLoggedIn = false;
 
-    public Funcionario( String nome, String email, String senha, String cpf,boolean isLoggedIn) {
-        super( nome, email, senha);
+
+    public Funcionario( String nome,String cpf, String senha, String email) {
+        super( nome, senha,email);
         this.cpf = cpf;
-        this.isLoggedIn = isLoggedIn;
+
+    }
+
+    public Funcionario(String senha,String cpf) {
+        super(senha);
+        this.cpf = cpf;
     }
 
 
@@ -23,11 +28,4 @@ public class Funcionario extends Pessoa{
         this.cpf = cpf;
     }
 
-    public boolean isLoggedIn() {
-        return isLoggedIn;
-    }
-
-    public void setLoggedIn(boolean loggedIn) {
-        isLoggedIn = loggedIn;
-    }
 }

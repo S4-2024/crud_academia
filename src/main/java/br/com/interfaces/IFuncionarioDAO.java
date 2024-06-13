@@ -1,4 +1,4 @@
-package br.com.dao;
+package br.com.interfaces;
 
 import br.com.models.Funcionario;
 
@@ -6,11 +6,9 @@ public interface IFuncionarioDAO {
 
     Funcionario save(Funcionario funcionario);
     Funcionario update(Funcionario funcionario);
-    void delete(Funcionario funcionario);
+    void delete(int id);
 
 
-    void setLoggedIn(boolean loggedIn);
-    void logOut();
     void accesClienteList();
     void accesClienteFicha();
 }

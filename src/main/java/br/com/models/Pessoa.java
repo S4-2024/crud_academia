@@ -19,6 +19,9 @@ public class Pessoa {
         this.senha = senha;
     }
 
+    public Pessoa(String senha) {
+    }
+
     public int getId() {
         return id;
     }
