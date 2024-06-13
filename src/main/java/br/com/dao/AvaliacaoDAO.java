@@ -20,7 +20,7 @@ public class AvaliacaoDAO implements IAvaliacaoDAO {
     public void create(Avaliacao avaliacao) throws Exception {
         String sql = "INSERT INTO Avaliacoes (sexo, idade, peso, altura, IMC, TMB, idAgendamento) VALUES (?, ?, ?, ?, ?, ?, ?)";
         try (PreparedStatement stmt = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS)) {
-            stmt.setString(1, avaliacao.getSexo());
+            stmt.setString(1, String.valueOf(avaliacao.getSexo()));
             stmt.setInt(2, avaliacao.getIdade());
             stmt.setDouble(3, avaliacao.getPeso());
             stmt.setDouble(4, avaliacao.getAltura());

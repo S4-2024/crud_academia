@@ -49,4 +49,14 @@ public class FichaCliente {
     public void setNotas(String notas) {
         this.notas = notas;
     }
+
+    @Override
+    public String toString() {
+        return "FichaCliente{" +
+                "id=" + id +
+                ", idCliente=" + idCliente +
+                ", data=" + data +
+                ", notas='" + notas + '\'' +
+                '}';
+    }
 }

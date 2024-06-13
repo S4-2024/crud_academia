@@ -38,7 +38,7 @@ public class Avaliacao {
     }
 
     public String getSexo() {
-        return sexo;
+        return String.valueOf(sexo);
     }
 
     public void setSexo(Sexo sexo) {

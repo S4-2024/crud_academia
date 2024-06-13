@@ -5,17 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="627e425d-b2e6-4f8a-86b4-48c7653f41da" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/dao/ExerciciosDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/gym/Exercicio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/gym/FichaCliente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/interfaces/IExerciciosDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/dao/AgendamentosDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/dao/AgendamentosDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/dao/FichasClienteDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/interfaces/IFichasClienteDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/testes/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/dao/AvaliacaoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/dao/AvaliacaoDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/functions/Agendamentos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/gym/Agendamentos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/functions/Avaliacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/gym/Avaliacao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/interfaces/IAgendamentosDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/interfaces/IAgendamentosDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/interfaces/IAvaliacaoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/interfaces/IAvaliacaoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/gym/Avaliacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/gym/Avaliacao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/testes/AdicionarCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/testes/AdicionarCliente.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,6 +52,7 @@
     "Application.DeleteCliente.executor": "Run",
     "Application.FuncionarioLoginTeste.executor": "Run",
     "Application.Listagens.executor": "Run",
+    "Application.Main.executor": "Run",
     "Application.TesteAvaliacao.executor": "Run",
     "Application.UpdateCliente.executor": "Run",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
@@ -109,7 +104,7 @@
       <workItem from="1718148325972" duration="335000" />
       <workItem from="1718235450399" duration="3355000" />
       <workItem from="1718283723177" duration="6448000" />
-      <workItem from="1718302224220" duration="5678000" />
+      <workItem from="1718302224220" duration="6012000" />
     </task>
     <servers />
   </component>
