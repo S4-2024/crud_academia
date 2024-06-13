@@ -4,7 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="627e425d-b2e6-4f8a-86b4-48c7653f41da" name="Changes" comment="" />
+    <list default="true" id="627e425d-b2e6-4f8a-86b4-48c7653f41da" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/dao/AvaliacaoDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/enums/Categoria.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/enums/Sexo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/functions/Avaliacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/AdicionarCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/testes/AdicionarCliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/AdicionarFuncionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/testes/AdicionarFuncionario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/DeleteCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/testes/DeleteCliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/Listagens.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/testes/Listagens.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/UpdateCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/testes/UpdateCliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/interfaces/IAvaliacaoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/interfaces/IAvaliacaoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/models/Pessoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/models/Pessoa.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,9 +30,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -93,7 +107,7 @@
       <workItem from="1718148325972" duration="335000" />
       <workItem from="1718235450399" duration="3355000" />
       <workItem from="1718283723177" duration="6448000" />
-      <workItem from="1718302224220" duration="320000" />
+      <workItem from="1718302224220" duration="4838000" />
     </task>
     <servers />
   </component>

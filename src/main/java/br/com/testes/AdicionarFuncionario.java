@@ -1,7 +1,6 @@
-package br.com;
+package br.com.testes;
 
 import br.com.dao.FuncionarioDAO;
-import br.com.enums.Pagamento;
 import br.com.models.Funcionario;
 
 import static br.com.enums.Pagamento.valueOf;

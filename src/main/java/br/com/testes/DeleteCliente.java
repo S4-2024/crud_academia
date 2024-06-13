@@ -1,4 +1,4 @@
-package br.com;
+package br.com.testes;
 
 import br.com.dao.ClienteDAO;
 

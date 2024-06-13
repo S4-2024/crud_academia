@@ -1,17 +1,13 @@
-//package br.com.dao;
-//
-//import br.com.models.Cliente;
-//
-//import java.util.List;
-//import java.util.Optional;
-//
-//public interface IAvaliacaoDAO {
-//     Avaliacao save(Avaliacao avaliacao);
-//     Avaliacao update(Avaliacao avaliacao);
-//     void delete(int idAvaliacao);
-//
-//     List<Avaliacao> findAll();
-//     Optional<Avaliacao> findById(int idAvaliacao);
-//     List<Avaliacao> findByCliente(Cliente cliente);
-//}
-//
+package br.com.interfaces;
+
+import br.com.functions.Avaliacao;
+
+import java.util.List;
+
+public interface IAvaliacaoDAO {
+    void create(Avaliacao avaliacao) throws Exception;
+    Avaliacao getById(int id) throws Exception;
+    List<Avaliacao> getAll() throws Exception;
+    void update(Avaliacao avaliacao) throws Exception;
+    void delete(int id) throws Exception;
+}
