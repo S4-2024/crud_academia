@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="627e425d-b2e6-4f8a-86b4-48c7653f41da" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/dao/CartoesCreditoDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/dao/ExerciciosFichaClienteDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/gym/ExercicioFichaCliente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/interfaces/ICartoesCreditoDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/interfaces/IExerciciosFichaClienteDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/models/CartaoCredito.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/testes/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/testes/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="627e425d-b2e6-4f8a-86b4-48c7653f41da" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -106,7 +97,7 @@
       <workItem from="1718148325972" duration="335000" />
       <workItem from="1718235450399" duration="3355000" />
       <workItem from="1718283723177" duration="6448000" />
-      <workItem from="1718302224220" duration="6651000" />
+      <workItem from="1718302224220" duration="6968000" />
     </task>
     <servers />
   </component>
