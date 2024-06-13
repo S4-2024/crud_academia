@@ -28,5 +28,10 @@ public class Cliente extends Pessoa{
         this.pagamento = pagamento;
     }
 
-
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "pagamento=" + pagamento +
+                '}';
+    }
 }

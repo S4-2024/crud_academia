@@ -28,4 +28,10 @@ public class Funcionario extends Pessoa{
         this.cpf = cpf;
     }
 
+    @Override
+    public String toString() {
+        return "Funcionario{" +
+                "cpf='" + cpf + '\'' +
+                '}';
+    }
 }

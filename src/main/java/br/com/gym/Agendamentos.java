@@ -51,4 +51,14 @@ public class Agendamentos {
     public void setIdCliente(int idCliente) {
         this.idCliente = idCliente;
     }
+
+    @Override
+    public String toString() {
+        return "Agendamentos{" +
+                "id=" + id +
+                ", dia=" + dia +
+                ", idFuncionario=" + idFuncionario +
+                ", idCliente=" + idCliente +
+                '}';
+    }
 }

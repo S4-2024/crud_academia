@@ -47,5 +47,15 @@ public class Exercicio {
     public void setCategoria(String categoria) {
         this.categoria = categoria;
     }
+
+    @Override
+    public String toString() {
+        return "Exercicio{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", musculo='" + musculo + '\'' +
+                ", categoria='" + categoria + '\'' +
+                '}';
+    }
 }
 

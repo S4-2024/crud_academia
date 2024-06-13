@@ -92,4 +92,18 @@ public class Avaliacao {
     public void setIdAgendamento(int idAgendamento) {
         this.idAgendamento = idAgendamento;
     }
+
+    @Override
+    public String toString() {
+        return "Avaliacao{" +
+                "id=" + id +
+                ", sexo=" + sexo +
+                ", idade=" + idade +
+                ", peso=" + peso +
+                ", altura=" + altura +
+                ", IMC=" + IMC +
+                ", TMB=" + TMB +
+                ", idAgendamento=" + idAgendamento +
+                '}';
+    }
 }
