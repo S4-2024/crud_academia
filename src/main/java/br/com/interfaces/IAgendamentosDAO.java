@@ -1,6 +1,6 @@
 package br.com.interfaces;
 
-import br.com.functions.Agendamentos;
+import br.com.gym.Agendamentos;
 
 import java.util.List;
 

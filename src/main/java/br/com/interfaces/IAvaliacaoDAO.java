@@ -1,6 +1,6 @@
 package br.com.interfaces;
 
-import br.com.functions.Avaliacao;
+import br.com.gym.Avaliacao;
 
 import java.util.List;
 

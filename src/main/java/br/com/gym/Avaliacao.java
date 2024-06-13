@@ -1,8 +1,10 @@
-package br.com.functions;
+package br.com.gym;
+
+import br.com.enums.Sexo;
 
 public class Avaliacao {
     private int id;
-    private String sexo;
+    private Sexo sexo;
     private int idade;
     private double peso;
     private double altura;
@@ -14,7 +16,7 @@ public class Avaliacao {
     public Avaliacao() {
     }
 
-    public Avaliacao(String sexo, int idade, double peso, double altura, double IMC, double TMB, int idAgendamento) {
+    public Avaliacao(Sexo sexo, int idade, double peso, double altura, double IMC, double TMB, int idAgendamento) {
         this.sexo = sexo;
         this.idade = idade;
         this.peso = peso;
@@ -39,7 +41,7 @@ public class Avaliacao {
         return sexo;
     }
 
-    public void setSexo(String sexo) {
+    public void setSexo(Sexo sexo) {
         this.sexo = sexo;
     }
 

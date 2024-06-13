@@ -1,10 +1,7 @@
 package br.com.testes;
 
-import br.com.dao.AvaliacaoDAO;
 import br.com.dao.ClienteDAO;
 import br.com.enums.Pagamento;
-import br.com.functions.Avaliacao;
-import br.com.interfaces.IAvaliacaoDAO;
 import br.com.models.Cliente;
 
 import java.util.Scanner;

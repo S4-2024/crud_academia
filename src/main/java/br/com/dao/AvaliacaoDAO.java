@@ -1,6 +1,7 @@
 package br.com.dao;
 
-import br.com.functions.Avaliacao;
+import br.com.enums.Sexo;
+import br.com.gym.Avaliacao;
 import br.com.infra.ConnectionFactory;
 import br.com.interfaces.IAvaliacaoDAO;
 
@@ -92,7 +93,7 @@ public class AvaliacaoDAO implements IAvaliacaoDAO {
     private Avaliacao extractAvaliacaoFromResultSet(ResultSet rs) throws Exception {
         Avaliacao avaliacao = new Avaliacao();
         avaliacao.setId(rs.getInt("id"));
-        avaliacao.setSexo(rs.getString("sexo"));
+        avaliacao.setSexo(Sexo.valueOf(rs.getString("sexo")));
         avaliacao.setIdade(rs.getInt("idade"));
         avaliacao.setPeso(rs.getDouble("peso"));
         avaliacao.setAltura(rs.getDouble("altura"));

@@ -1,6 +1,6 @@
 package br.com.dao;
 
-import br.com.functions.Agendamentos;
+import br.com.gym.Agendamentos;
 import br.com.interfaces.IAgendamentosDAO;
 
 import java.sql.*;

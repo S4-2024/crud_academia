@@ -1,4 +1,4 @@
-package br.com.functions;
+package br.com.gym;
 
 
 import java.sql.Date;

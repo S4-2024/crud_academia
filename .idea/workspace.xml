@@ -5,19 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="627e425d-b2e6-4f8a-86b4-48c7653f41da" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/dao/AvaliacaoDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/enums/Categoria.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/enums/Sexo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/functions/Avaliacao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/dao/ExerciciosDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/gym/Exercicio.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/gym/FichaCliente.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/interfaces/IExerciciosDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/AdicionarCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/testes/AdicionarCliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/AdicionarFuncionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/testes/AdicionarFuncionario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/DeleteCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/testes/DeleteCliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/Listagens.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/testes/Listagens.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/UpdateCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/testes/UpdateCliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/dao/AgendamentosDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/dao/AgendamentosDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/dao/AvaliacaoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/dao/AvaliacaoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/functions/Agendamentos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/gym/Agendamentos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/functions/Avaliacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/gym/Avaliacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/interfaces/IAgendamentosDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/interfaces/IAgendamentosDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/interfaces/IAvaliacaoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/interfaces/IAvaliacaoDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/models/Pessoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/models/Pessoa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/testes/AdicionarCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/testes/AdicionarCliente.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,9 +29,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -43,35 +42,38 @@
   &quot;associatedIndex&quot;: 6
 }</component>
   <component name="ProjectId" id="2hbuqSOc7hEKY7Wa04fCtBIxAJY" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.AdicionarCliente.executor&quot;: &quot;Run&quot;,
-    &quot;Application.AdicionarFuncionario.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Application.executor&quot;: &quot;Run&quot;,
-    &quot;Application.DeleteCliente.executor&quot;: &quot;Run&quot;,
-    &quot;Application.FuncionarioLoginTeste.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Listagens.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TesteAvaliacao.executor&quot;: &quot;Run&quot;,
-    &quot;Application.UpdateCliente.executor&quot;: &quot;Run&quot;,
-    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.AdicionarCliente.executor": "Run",
+    "Application.AdicionarFuncionario.executor": "Run",
+    "Application.Application.executor": "Run",
+    "Application.DeleteCliente.executor": "Run",
+    "Application.FuncionarioLoginTeste.executor": "Run",
+    "Application.Listagens.executor": "Run",
+    "Application.TesteAvaliacao.executor": "Run",
+    "Application.UpdateCliente.executor": "Run",
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\gabri\IdeaProjects\crud_academia\src\main\java\br\com\interfaces" />
@@ -107,12 +109,15 @@
       <workItem from="1718148325972" duration="335000" />
       <workItem from="1718235450399" duration="3355000" />
       <workItem from="1718283723177" duration="6448000" />
-      <workItem from="1718302224220" duration="4838000" />
+      <workItem from="1718302224220" duration="5678000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
