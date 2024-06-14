@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="627e425d-b2e6-4f8a-86b4-48c7653f41da" name="Changes" comment="" />
+    <list default="true" id="627e425d-b2e6-4f8a-86b4-48c7653f41da" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/testes/AdicionarCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/testes/AdicionarCliente.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,6 +29,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -49,6 +54,7 @@
     "Application.TesteAvaliacao.executor": "Run",
     "Application.UpdateCliente.executor": "Run",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "Maven.crud_academia [install].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
@@ -98,6 +104,7 @@
       <workItem from="1718235450399" duration="3355000" />
       <workItem from="1718283723177" duration="6448000" />
       <workItem from="1718302224220" duration="6968000" />
+      <workItem from="1718404498423" duration="618000" />
     </task>
     <servers />
   </component>
