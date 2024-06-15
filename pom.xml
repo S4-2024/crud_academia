@@ -5,7 +5,7 @@
     <artifactId>crud_academia</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>Archetype - crud_academia</name>
-    <url>http://maven.apache.org</url>
+    <url>https://maven.apache.org</url>
 
 
     <dependencies>
@@ -15,11 +15,15 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.27</version>
+            <version>8.0.28</version>
+            <scope>compile</scope>
         </dependency>
 
 
     </dependencies>
+
+
+
     <build>
         <plugins>
             <plugin>

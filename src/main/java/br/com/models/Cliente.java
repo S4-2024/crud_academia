@@ -7,10 +7,8 @@ public class Cliente extends Pessoa{
     private Pagamento pagamento;
 
 
-    public Cliente(String nome, String email, String senha,Pagamento pagamento) {
+    public Cliente(String nome, String email, String senha) {
         super(nome, email, senha);
-
-        this.pagamento = pagamento;
     }
 
     public Cliente(int id,String nome, String email, String senha,Pagamento pagamento) {

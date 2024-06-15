@@ -8,12 +8,12 @@ public class ConnectionFactory {
     private ConnectionFactory() {}
 
     public static Connection getConnection() {
-
         try {
-           return  DriverManager.getConnection("jdbc:mysql://localhost:3306/crud", "root", "admin");
-        }catch(SQLException e) {
+            // Carrega o driver JDBC explicitamente
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            return DriverManager.getConnection("jdbc:mysql://localhost:3306/crud", "root", "admin");
+        } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
-
     }
 }
