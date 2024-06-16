@@ -224,6 +224,34 @@ public class ClienteDAO implements IClienteDAO {
         return clientes;
     }
 
+    @Override
+    public List<Cliente> findByEmail(String email) {
+        String sql = "SELECT id, nome, email, senha, pagamento FROM Clientes WHERE email LIKE ?";
+
+        List<Cliente> clientes = new ArrayList<>();
+
+        try (Connection connection = ConnectionFactory.getConnection()) {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, "%" + email + "%"); // Use % to allow partial matches
+
+            ResultSet rs = preparedStatement.executeQuery();
+
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String nome = rs.getString("nome");
+                String emailResultado = rs.getString("email");
+                String senha = rs.getString("senha");
+                Pagamento pagamento = Pagamento.valueOf(rs.getString("pagamento"));
+
+                Cliente cliente = new Cliente(id, nome, emailResultado, senha, pagamento);
+                clientes.add(cliente);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return clientes;
+    }
 
 
 

@@ -13,9 +13,10 @@ public interface IClienteDAO {
 
     List<Cliente> findAll();
     Optional<Cliente> findById(int id);
-    List<Cliente> findByNome(String nome);
+    List<Cliente> findByNome(String nome); //algoritmo de busca
     List<Cliente> orderedByBubbleSortName();
 
+    List<Cliente> findByEmail(String email);  //algoritmo de busca
 
 
 }

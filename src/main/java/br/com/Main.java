@@ -67,7 +67,7 @@ public class Main {
             panel.add(new JLabel("Bem-vindo, " + cliente.get().getNome()));
             panel.add(new JButton("Consultar Ficha"));
             panel.add(new JButton("Consultar Treino"));
-            panel.add(new JButton("Voltar para o menu inicial"));
+
             frame.pack();
         } else {
             JOptionPane.showMessageDialog(frame, "Email ou senha inválidos.");
@@ -96,10 +96,7 @@ public class Main {
             buttonsPanel.add(ordenarPorNomeButton);
             JButton pesquisarClientePorNomeButton = new JButton("Pesquisar Cliente por Nome");
             buttonsPanel.add(pesquisarClientePorNomeButton);
-            JButton buscarClientePorEmailButton = new JButton("Buscar Cliente por Email");
-            buttonsPanel.add(buscarClientePorEmailButton);
-            JButton voltarMenuInicialButton = new JButton("Voltar para o menu inicial");
-            buttonsPanel.add(voltarMenuInicialButton);
+          
 
             panel.add(buttonsPanel, BorderLayout.NORTH);
 
@@ -190,5 +187,7 @@ public class Main {
         } else {
             JOptionPane.showMessageDialog(frame, "Email ou senha inválidos.");
         }
+
+
     }
 }
