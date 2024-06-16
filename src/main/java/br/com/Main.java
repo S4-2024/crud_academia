@@ -96,7 +96,7 @@ public class Main {
             buttonsPanel.add(ordenarPorNomeButton);
             JButton pesquisarClientePorNomeButton = new JButton("Pesquisar Cliente por Nome");
             buttonsPanel.add(pesquisarClientePorNomeButton);
-          
+
 
             panel.add(buttonsPanel, BorderLayout.NORTH);
 
