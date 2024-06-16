@@ -72,58 +72,37 @@ O projeto inclui dois scripts SQL no diretório `banco_dados/`:
 
 - **Main.java**: Classe principal que inicia a aplicação.
 
-### DAOs
+### Introdução ao Padrão DAO
+O padrão DAO (Data Access Object) é um padrão de design que abstrai e encapsula o acesso a dados, oferecendo uma interface simples para executar operações de persistência em um banco de dados. Ele separa a lógica de negócios da lógica de acesso a dados, permitindo que as operações no banco de dados sejam realizadas de maneira desacoplada do restante da aplicação.
 
-As classes DAO são responsáveis por encapsular a lógica de acesso ao banco de dados:
+### Estrutura do DAO no Projeto
 
-- **AgendamentosDAO.java**
-- **AvaliacaoDAO.java**
-- **CartoesCreditoDAO.java**
-- **ClienteDAO.java**
-- **ExerciciosDAO.java**
-- **ExerciciosFichaClienteDAO.java**
-- **FichasClienteDAO.java**
-- **FuncionarioDAO.java**
+No projeto "CRUD Academia", o padrão DAO é utilizado para gerenciar a interação com o banco de dados para diferentes entidades, como Cliente, Funcionário, Avaliação, etc. A estrutura do DAO no projeto é composta pelas seguintes partes principais:
 
-### Enums
+1. **Interfaces DAO**: Definem os métodos que serão implementados pelas classes DAO.
+2. **Classes DAO**: Implementam as interfaces DAO e contêm a lógica para acessar e manipular os dados no banco de dados.
+3. **Modelos**: Representam as entidades do banco de dados como objetos Java.
 
-Enums para representar dados fixos:
+### Interfaces DAO
 
-- **Categoria.java**
-- **Pagamento.java**
-- **Sexo.java**
+As interfaces DAO definem os métodos que devem ser implementados pelas classes DAO para cada entidade. Elas garantem que todas as classes DAO sigam um contrato consistente, facilitando a manutenção e a extensibilidade do código.
 
-### Interfaces
+Exemplo de interface DAO para Cliente:
 
-Interfaces para as classes DAO:
+```java
+package br.com.interfaces;
 
-- **IAgendamentosDAO.java**
-- **IAvaliacaoDAO.java**
-- **ICartoesCreditoDAO.java**
-- **IClienteDAO.java**
-- **IExerciciosDAO.java**
-- **IExerciciosFichaClienteDAO.java**
-- **IFichasClienteDAO.java**
-- **IFuncionarioDAO.java**
+import br.com.models.Cliente;
+import java.util.List;
 
-### Modelos
-
-Classes que representam os dados do sistema:
-
-- **CartaoCredito.java**
-- **Cliente.java**
-- **Funcionario.java**
-- **Pessoa.java**
-
-### Testes
-
-Classes de teste para validar a funcionalidade do sistema:
-
-- **AdicionarCliente.java**
-- **AdicionarFuncionario.java**
-- **DeleteCliente.java**
-- **Listagens.java**
-- **UpdateCliente.java**
+public interface IClienteDAO {
+    void adicionarCliente(Cliente cliente);
+    Cliente buscarClientePorId(int id);
+    List<Cliente> listarClientes();
+    void atualizarCliente(Cliente cliente);
+    void deletarCliente(int id);
+}
+```
 
 ## Como Executar o Projeto
 
