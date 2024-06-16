@@ -6,14 +6,15 @@ import br.com.models.Funcionario;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.List;
 import java.util.Optional;
 
-public class Main{
+public class Main {
     private static JFrame frame;
     private static JPanel panel;
 
     public static void main(String[] args) {
-        frame = new JFrame("Menu Example");
+        frame = new JFrame("Fitten");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         panel = new JPanel();
@@ -47,15 +48,18 @@ public class Main{
         frame.setVisible(true);
     }
 
-    private static void loginCliente() {
 
+    //
+
+
+    private static void loginCliente() {
 
         String email = JOptionPane.showInputDialog(frame, "Digite seu email:");
         String senha = JOptionPane.showInputDialog(frame, "Digite sua senha:");
 
         ClienteDAO dao = new ClienteDAO();
 
-        Optional<Cliente> cliente = dao.findByEmailAndPassword(email,senha);
+        Optional<Cliente> cliente = dao.findByEmailAndPassword(email, senha);
 
         if (cliente.isPresent()) {
             panel.removeAll();
@@ -69,6 +73,9 @@ public class Main{
         }
     }
 
+
+    //
+
     private static void loginFuncionario() {
         String email = JOptionPane.showInputDialog(frame, "Digite seu email:");
         String senha = JOptionPane.showInputDialog(frame, "Digite sua senha:");
@@ -78,12 +85,43 @@ public class Main{
 
         if (funcionario.isPresent()) {
             panel.removeAll();
-            panel.add(new JLabel("Bem-vindo, " + funcionario.get().getNome()));
-            panel.add(new JButton("Consultar Clientes"));
-            panel.add(new JButton("Ordenar Clientes por Nome"));
-            panel.add(new JButton("Pesquisar Cliente por Nome"));
-            panel.add(new JButton("Buscar Cliente por Email"));
-            panel.add(new JButton("Voltar para o menu inicial"));
+            panel.setLayout(new BorderLayout());
+
+            JPanel buttonsPanel = new JPanel();
+            buttonsPanel.add(new JLabel("Bem-vindo, " + funcionario.get().getNome()));
+            JButton consultarClientesButton = new JButton("Consultar Clientes");
+            buttonsPanel.add(consultarClientesButton);
+            buttonsPanel.add(new JButton("Ordenar Clientes por Nome"));
+            buttonsPanel.add(new JButton("Pesquisar Cliente por Nome"));
+            buttonsPanel.add(new JButton("Buscar Cliente por Email"));
+            buttonsPanel.add(new JButton("Voltar para o menu inicial"));
+
+            panel.add(buttonsPanel, BorderLayout.NORTH);
+
+            consultarClientesButton.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    ClienteDAO clienteDAO = new ClienteDAO();
+                    List<Cliente> clientes = clienteDAO.findAll();
+
+                    String[] columnNames = {"ID", "Nome", "Email", "Pagamento"};
+                    Object[][] data = new Object[clientes.size()][4];
+
+                    for (int i = 0; i < clientes.size(); i++) {
+                        Cliente cliente = clientes.get(i);
+                        data[i][0] = cliente.getId();
+                        data[i][1] = cliente.getNome();
+                        data[i][2] = cliente.getEmail();
+                        data[i][3] = cliente.getPagamento().toString();
+                    }
+
+                    JTable table = new JTable(data, columnNames);
+                    JScrollPane scrollPane = new JScrollPane(table);
+
+                    panel.add(scrollPane, BorderLayout.CENTER);
+                    frame.pack();
+                }
+            });
+
             frame.pack();
         } else {
             JOptionPane.showMessageDialog(frame, "Email ou senha inválidos.");
