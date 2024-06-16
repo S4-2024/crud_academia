@@ -4,7 +4,7 @@ Este projeto implementa um sistema CRUD (Create, Read, Update, Delete) para gere
 
 ## Visão Geral
 
-O sistema permite a gestão de clientes, funcionários, agendamentos, avaliações, cartões de crédito, exercícios e fichas de clientes. A estrutura do projeto inclui modelos, interfaces, DAOs e scripts SQL para a criação e preenchimento do banco de dados.
+O sistema permite a gestão de clientes, funcionários, agendamentos, avaliações, exercícios e fichas de clientes. A estrutura do projeto inclui modelos, interfaces, DAOs e scripts SQL para a criação e preenchimento do banco de dados.
 
 ## Estrutura do Projeto
 
