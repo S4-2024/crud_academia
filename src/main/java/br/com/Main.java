@@ -2,7 +2,7 @@ package br.com;
 import br.com.dao.*;
 import br.com.models.Cliente;
 import br.com.models.Funcionario;
- 
+
 
 import javax.swing.*;
 import java.awt.*;
@@ -150,6 +150,41 @@ public class Main {
                     frame.pack();
                 }
             });
+
+            pesquisarClientePorNomeButton.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    String nome = JOptionPane.showInputDialog(frame, "Digite o nome do cliente:");
+                    if (nome != null && !nome.isEmpty()) {
+                        ClienteDAO dao = new ClienteDAO();
+                        List<Cliente> clientes = dao.findByNome(nome);
+
+                        if (!clientes.isEmpty()) {
+                            String[] columnNames = {"ID", "Nome", "Email", "Pagamento"};
+                            Object[][] data = new Object[clientes.size()][4];
+
+                            for (int i = 0; i < clientes.size(); i++) {
+                                Cliente cliente = clientes.get(i);
+                                data[i][0] = cliente.getId();
+                                data[i][1] = cliente.getNome();
+                                data[i][2] = cliente.getEmail();
+                                data[i][3] = cliente.getPagamento().toString();
+                            }
+
+                            JTable table = new JTable(data, columnNames);
+                            JScrollPane scrollPane = new JScrollPane(table);
+
+                            panel.add(scrollPane, BorderLayout.CENTER);
+                            frame.pack();
+                        } else {
+                            JOptionPane.showMessageDialog(frame, "Nenhum cliente encontrado com o nome '" + nome + "'");
+                        }
+                    }
+                }
+            });
+
+
+
+
 
             frame.pack();
         } else {
