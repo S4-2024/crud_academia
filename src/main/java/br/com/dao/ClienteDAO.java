@@ -84,6 +84,34 @@ public class ClienteDAO implements IClienteDAO {
     }
 
     @Override
+    public Optional<Cliente> findByEmailAndPassword(String email, String senha) {
+        String sql = "SELECT id, nome, email, senha, pagamento FROM Clientes WHERE email=? AND senha=?";
+
+        Cliente cliente = null;
+
+        try (Connection connection = ConnectionFactory.getConnection()) {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+            preparedStatement.setString(1, email);
+            preparedStatement.setString(2, senha);
+
+            ResultSet rs = preparedStatement.executeQuery();
+
+            if (rs.next()) {
+                int id = rs.getInt("id");
+                String nome = rs.getString("nome");
+                Pagamento pagamento = Pagamento.valueOf(rs.getString("pagamento"));
+
+                cliente = new Cliente(id, nome, email, senha, pagamento);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return Optional.ofNullable(cliente);
+    }
+
+    @Override
     public List<Cliente> findAll() {
         String sql = "SELECT id,nome,email,senha,pagamento FROM Clientes ";
 
