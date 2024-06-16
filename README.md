@@ -67,7 +67,7 @@ O projeto inclui dois scripts SQL no diretório `banco_dados/`:
 2. `bd_preenchido.sql`: Preenche as tabelas com dados de exemplo.
 
 
-### Introdução ao Padrão DAO
+## Introdução ao Padrão DAO
 O padrão DAO (Data Access Object) é um padrão de design que abstrai e encapsula o acesso a dados, oferecendo uma interface simples para executar operações de persistência em um banco de dados. Ele separa a lógica de negócios da lógica de acesso a dados, permitindo que as operações no banco de dados sejam realizadas de maneira desacoplada do restante da aplicação.
 
 ### Estrutura do DAO no Projeto
