@@ -204,5 +204,27 @@ public class ClienteDAO implements IClienteDAO {
         return clientes;
     }
 
+    @Override
+    public List<Cliente> orderedByBubbleSortName() {
+        List<Cliente> clientes = findAll(); // Busca todos os clientes do banco de dados
+
+        int n = clientes.size();
+        Cliente temp;
+
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                // Compara os nomes em ordem alfabética ignorando maiúsculas/minúsculas
+                if (clientes.get(j).getNome().compareToIgnoreCase(clientes.get(j + 1).getNome()) > 0) {
+                    // Troca de posição se o nome atual for maior que o próximo nome na ordem alfabética
+                    temp = clientes.get(j);
+                    clientes.set(j, clientes.get(j + 1));
+                    clientes.set(j + 1, temp);
+                }
+            }
+        }
+
+        return clientes;
+    }
+
 
 }

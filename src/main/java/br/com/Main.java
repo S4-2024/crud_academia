@@ -2,6 +2,7 @@ package br.com;
 import br.com.dao.*;
 import br.com.models.Cliente;
 import br.com.models.Funcionario;
+ 
 
 import javax.swing.*;
 import java.awt.*;
@@ -87,21 +88,49 @@ public class Main {
             panel.removeAll();
             panel.setLayout(new BorderLayout());
 
-            JPanel buttonsPanel = new JPanel();
+            JPanel buttonsPanel = new JPanel(); // Initialize the panel here
             buttonsPanel.add(new JLabel("Bem-vindo, " + funcionario.get().getNome()));
             JButton consultarClientesButton = new JButton("Consultar Clientes");
             buttonsPanel.add(consultarClientesButton);
-            buttonsPanel.add(new JButton("Ordenar Clientes por Nome"));
-            buttonsPanel.add(new JButton("Pesquisar Cliente por Nome"));
-            buttonsPanel.add(new JButton("Buscar Cliente por Email"));
-            buttonsPanel.add(new JButton("Voltar para o menu inicial"));
+            JButton ordenarPorNomeButton = new JButton("Ordenar Clientes por Nome");
+            buttonsPanel.add(ordenarPorNomeButton);
+            JButton pesquisarClientePorNomeButton = new JButton("Pesquisar Cliente por Nome");
+            buttonsPanel.add(pesquisarClientePorNomeButton);
+            JButton buscarClientePorEmailButton = new JButton("Buscar Cliente por Email");
+            buttonsPanel.add(buscarClientePorEmailButton);
+            JButton voltarMenuInicialButton = new JButton("Voltar para o menu inicial");
+            buttonsPanel.add(voltarMenuInicialButton);
 
             panel.add(buttonsPanel, BorderLayout.NORTH);
 
             consultarClientesButton.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
-                    ClienteDAO clienteDAO = new ClienteDAO();
-                    List<Cliente> clientes = clienteDAO.findAll();
+                    ClienteDAO dao = new ClienteDAO();
+                    List<Cliente> clientes = dao.findAll();
+
+                    String[] columnNames = {"ID", "Nome", "Email", "Pagamento"};
+                    Object[][] data = new Object[clientes.size()][4];
+
+                    for (int i = 0; i < clientes.size(); i++) {
+                        Cliente cliente = clientes.get(i);
+                        data[i][0] = cliente.getId();
+                        data[i][1] = cliente.getNome();
+                        data[i][2] = cliente.getEmail();
+                        data[i][3] = cliente.getPagamento().toString();
+                    }
+
+                    JTable table = new JTable(data, columnNames);
+                    JScrollPane scrollPane = new JScrollPane(table);
+
+                    panel.add(scrollPane, BorderLayout.CENTER);
+                    frame.pack();
+                }
+            });
+
+            ordenarPorNomeButton.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    ClienteDAO dao = new ClienteDAO();
+                    List<Cliente> clientes = dao.orderedByBubbleSortName();
 
                     String[] columnNames = {"ID", "Nome", "Email", "Pagamento"};
                     Object[][] data = new Object[clientes.size()][4];

@@ -14,4 +14,5 @@ public interface IClienteDAO {
     List<Cliente> findAll();
     Optional<Cliente> findById(int id);
     List<Cliente> findByNome(String nome);
+    List<Cliente> orderedByBubbleSortName();
 }
