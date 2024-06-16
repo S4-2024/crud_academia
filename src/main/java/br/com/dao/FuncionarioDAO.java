@@ -9,6 +9,7 @@ import br.com.models.Funcionario;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class FuncionarioDAO implements IFuncionarioDAO {
 
@@ -83,41 +84,33 @@ public class FuncionarioDAO implements IFuncionarioDAO {
 
     }
 
-
-
     @Override
-    public void accesClienteList() {
-        String sql = "SELECT id,nome,email,senha,pagamento FROM Clientes ";
+    public Optional<Funcionario> findByEmailAndPassword(String email, String senha) {
+        String sql = "SELECT id,nome,cpf,senha FROM Funcionarios WHERE email = ? AND senha = ?";
+        Funcionario funcionario = null;
+        try(Connection connection = ConnectionFactory.getConnection()){
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
-        List<Cliente> clientes = new ArrayList<>();
+            preparedStatement.setString(1, email);
+            preparedStatement.setString(2, senha);
 
-        try (Connection connection = ConnectionFactory.getConnection()) {
-            PreparedStatement preparedStatement = connection.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
+            ResultSet rs = preparedStatement.executeQuery();
 
-            preparedStatement.executeQuery();
-            ResultSet rs = preparedStatement.getResultSet();
+            if (rs.next()){
+                int id = rs.getInt("id");
+                String nome = rs.getString("nome");
+                String cpf = rs.getString("cpf");
 
-            while (rs.next()) {
-                int id =   rs.getInt("id");
-                String nome =   rs.getString("nome");
-                String email =   rs.getString("email");
-                String senha =   rs.getString("senha");
-                Pagamento pagamento = Pagamento.valueOf(rs.getString("pagamento"));
-
-                Cliente  cliente  = new Cliente(id,nome,email,senha,pagamento);
-                clientes.add(cliente);
+                funcionario = new Funcionario(id,nome,cpf);
 
             }
-
-
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
-
+        return Optional.ofNullable(funcionario);
     }
 
-    @Override
-    public void accesClienteFicha() {
 
-    }
+
+
 }

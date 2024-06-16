@@ -6,6 +6,7 @@ public class Funcionario extends Pessoa{
     private  String cpf;
 
 
+
     public Funcionario( String nome,String cpf, String senha, String email) {
         super( nome, senha,email);
         this.cpf = cpf;
@@ -17,7 +18,9 @@ public class Funcionario extends Pessoa{
         this.cpf = cpf;
     }
 
-
+    public Funcionario(int id, String nome, String cpf) {
+        super(nome);
+    }
 
 
     public String getCpf() {
