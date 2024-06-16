@@ -1,13 +1,23 @@
 package br.com;
+import br.com.dao.*;
+import br.com.models.Cliente;
+import br.com.models.Funcionario;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.Optional;
 
-public class Main {
+public class Main{
+    private static JFrame frame;
+    private static JPanel panel;
+
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Menu Example");
+        frame = new JFrame("Menu Example");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        panel = new JPanel();
+        frame.getContentPane().add(panel);
 
         JMenuBar menuBar = new JMenuBar();
         frame.setJMenuBar(menuBar);
@@ -38,54 +48,45 @@ public class Main {
     }
 
     private static void loginCliente() {
-        JFrame frame = new JFrame("Login Cliente");
-        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-        JPanel panel = new JPanel();
-        frame.getContentPane().add(panel);
 
-        JLabel label = new JLabel("Login Cliente");
-        panel.add(label);
+        String email = JOptionPane.showInputDialog(frame, "Digite seu email:");
+        String senha = JOptionPane.showInputDialog(frame, "Digite sua senha:");
 
-        JButton consultarFichaButton = new JButton("Consultar Ficha");
-        panel.add(consultarFichaButton);
+        ClienteDAO dao = new ClienteDAO();
 
-        JButton consultarTreinoButton = new JButton("Consultar Treino");
-        panel.add(consultarTreinoButton);
+        Optional<Cliente> cliente = dao.findByEmailAndPassword(email,senha);
 
-        JButton voltarButton = new JButton("Voltar para o menu inicial");
-        panel.add(voltarButton);
-
-        frame.setSize(300, 300);
-        frame.setVisible(true);
+        if (cliente.isPresent()) {
+            panel.removeAll();
+            panel.add(new JLabel("Bem-vindo, " + cliente.get().getNome()));
+            panel.add(new JButton("Consultar Ficha"));
+            panel.add(new JButton("Consultar Treino"));
+            panel.add(new JButton("Voltar para o menu inicial"));
+            frame.pack();
+        } else {
+            JOptionPane.showMessageDialog(frame, "Email ou senha inválidos.");
+        }
     }
 
     private static void loginFuncionario() {
-        JFrame frame = new JFrame("Login Funcionário");
-        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        String email = JOptionPane.showInputDialog(frame, "Digite seu email:");
+        String senha = JOptionPane.showInputDialog(frame, "Digite sua senha:");
 
-        JPanel panel = new JPanel();
-        frame.getContentPane().add(panel);
+        FuncionarioDAO dao = new FuncionarioDAO();
+        Optional<Funcionario> funcionario = dao.findByEmailAndPassword(email, senha);
 
-        JLabel label = new JLabel("Login Funcionário");
-        panel.add(label);
-
-        JButton consultarClientesButton = new JButton("Consultar Clientes");
-        panel.add(consultarClientesButton);
-
-        JButton ordenarClientesButton = new JButton("Ordenar Clientes por Nome");
-        panel.add(ordenarClientesButton);
-
-        JButton pesquisarClienteButton = new JButton("Pesquisar Cliente por Nome");
-        panel.add(pesquisarClienteButton);
-
-        JButton buscarClienteButton = new JButton("Buscar Cliente por Email");
-        panel.add(buscarClienteButton);
-
-        JButton voltarButton = new JButton("Voltar para o menu inicial");
-        panel.add(voltarButton);
-
-        frame.setSize(300, 300);
-        frame.setVisible(true);
+        if (funcionario.isPresent()) {
+            panel.removeAll();
+            panel.add(new JLabel("Bem-vindo, " + funcionario.get().getNome()));
+            panel.add(new JButton("Consultar Clientes"));
+            panel.add(new JButton("Ordenar Clientes por Nome"));
+            panel.add(new JButton("Pesquisar Cliente por Nome"));
+            panel.add(new JButton("Buscar Cliente por Email"));
+            panel.add(new JButton("Voltar para o menu inicial"));
+            frame.pack();
+        } else {
+            JOptionPane.showMessageDialog(frame, "Email ou senha inválidos.");
+        }
     }
 }
