@@ -10,6 +10,12 @@
 
     <dependencies>
 
+        <dependency>
+            <groupId>org.apache.xmlgraphics</groupId>
+            <artifactId>batik-swing</artifactId>
+            <version>1.14</version> <!-- ou a versão mais recente -->
+        </dependency>
+
         <!-- Crud dependecy -->
 
         <dependency>

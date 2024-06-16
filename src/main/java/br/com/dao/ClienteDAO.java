@@ -174,35 +174,33 @@ public class ClienteDAO implements IClienteDAO {
 
     @Override
     public List<Cliente> findByNome(String nome) {
-        String sql = "SELECT id,nome,email,senha,pagamento FROM Clientes WHERE nome = ? ";
+        String sql = "SELECT id, nome, email, senha, pagamento FROM Clientes WHERE nome LIKE ?";
 
         List<Cliente> clientes = new ArrayList<>();
 
         try (Connection connection = ConnectionFactory.getConnection()) {
-            PreparedStatement preparedStatement = connection.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
-            preparedStatement.setString(1, nome);
-            preparedStatement.executeQuery();
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, "%" + nome + "%"); // Use % to allow partial matches
 
-            ResultSet rs = preparedStatement.getResultSet();
+            ResultSet rs = preparedStatement.executeQuery();
 
             while (rs.next()) {
                 int id = rs.getInt("id");
-                String Pnome =   rs.getString("nome");
-                String email =   rs.getString("email");
-                String senha =   rs.getString("senha");
+                String Pnome = rs.getString("nome");
+                String email = rs.getString("email");
+                String senha = rs.getString("senha");
                 Pagamento pagamento = Pagamento.valueOf(rs.getString("pagamento"));
 
-                Cliente  cliente  = new Cliente(id,Pnome,email,senha,pagamento);
+                Cliente cliente = new Cliente(id, Pnome, email, senha, pagamento);
                 clientes.add(cliente);
-
             }
-
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return clientes;
     }
+
 
     @Override
     public List<Cliente> orderedByBubbleSortName() {
