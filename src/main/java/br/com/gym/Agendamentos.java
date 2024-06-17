@@ -9,8 +9,11 @@ public class Agendamentos {
     private int idFuncionario;
     private int idCliente;
 
-    // Construtores
     public Agendamentos() {}
+
+    public Agendamentos(int id) {
+        this.id = id;
+    }
 
     public Agendamentos(int id, Date dia, int idFuncionario, int idCliente) {
         this.id = id;

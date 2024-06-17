@@ -85,7 +85,6 @@ public class ExerciciosFichaClienteDAO implements IExerciciosFichaClienteDAO {
         }
     }
 
-    // Método auxiliar para extrair um ExercicioFichaCliente do ResultSet atual
     private ExercicioFichaCliente extractExercicioFichaClienteFromResultSet(ResultSet rs) throws Exception {
         ExercicioFichaCliente exercicioFichaCliente = new ExercicioFichaCliente();
         exercicioFichaCliente.setId(rs.getInt("id"));

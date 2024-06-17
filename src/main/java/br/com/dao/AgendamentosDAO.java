@@ -2,6 +2,7 @@ package br.com.dao;
 
 import br.com.gym.Agendamentos;
 import br.com.interfaces.IAgendamentosDAO;
+import br.com.models.Funcionario;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -79,6 +80,26 @@ public class AgendamentosDAO implements IAgendamentosDAO {
         }
     }
 
+    public List<Agendamentos> findByFuncionario(Funcionario funcionario) {
+        List<Agendamentos> agendamentos = new ArrayList<>();
+        String sql = "SELECT * FROM agendamentos WHERE idFuncionario = ?";
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+            stmt.setInt(1, funcionario.getId());
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    Agendamentos agendamento = new Agendamentos();
+                    agendamento.setId(rs.getInt("id"));
+                    agendamento.setDia(rs.getDate("dia"));
+                    agendamento.setIdFuncionario(rs.getInt("idFuncionario"));
+                    agendamento.setIdCliente(rs.getInt("idCliente"));
+                    agendamentos.add(agendamento);
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println("Erro ao buscar agendamentos: " + e.getMessage());
+        }
+        return agendamentos;
+    }
 
     @Override
     public List<Agendamentos> listAll() throws Exception {

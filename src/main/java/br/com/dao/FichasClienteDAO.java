@@ -1,9 +1,11 @@
 package br.com.dao;
 
+import br.com.enums.Type;
 import br.com.gym.FichaCliente;
 import br.com.interfaces.IFichasClienteDAO;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -11,11 +13,37 @@ import java.util.List;
 
 public class FichasClienteDAO implements IFichasClienteDAO {
 
-    private Connection connection;
+    private static Connection connection;
+    private int id;
+    private String nomeAluno;
+    private String nomeTreinador;
+    private double pesoInicial;
+    private Date dataCriacao;
+    private Type tipo;
+    private String[] exerciciosInferiores;
+    private String[] exerciciosPosteriores;
+    private String[] exerciciosSuperiores;
+    private String[] exerciciosCore;
+    private int idCliente;
 
-    // Construtor que recebe a conexão com o banco de dados
+    // Construtor padrão
     public FichasClienteDAO(Connection connection) {
         this.connection = connection;
+    }
+
+    // Novo construtor para aceitar os parâmetros necessários
+    public FichasClienteDAO(int id, String nomeAluno, String nomeTreinador, double pesoInicial, Date dataCriacao, Type tipo, String[] exerciciosInferiores, String[] exerciciosPosteriores, String[] exerciciosSuperiores, String[] exerciciosCore, int idCliente) {
+        this.id = id;
+        this.nomeAluno = nomeAluno;
+        this.nomeTreinador = nomeTreinador;
+        this.pesoInicial = pesoInicial;
+        this.dataCriacao = dataCriacao;
+        this.tipo = tipo;
+        this.exerciciosInferiores = exerciciosInferiores;
+        this.exerciciosPosteriores = exerciciosPosteriores;
+        this.exerciciosSuperiores = exerciciosSuperiores;
+        this.exerciciosCore = exerciciosCore;
+        this.idCliente = idCliente;
     }
 
     @Override

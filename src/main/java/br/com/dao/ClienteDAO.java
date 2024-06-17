@@ -40,10 +40,8 @@ public class ClienteDAO implements IClienteDAO {
             throw new RuntimeException(e);
         }
 
-
         return cliente;
     }
-
 
     @Override
     public Cliente update(Cliente cliente) {
@@ -55,13 +53,11 @@ public class ClienteDAO implements IClienteDAO {
             preparedStatement.setString(3, cliente.getSenha());
             preparedStatement.setString(4, String.valueOf(cliente.getPagamento()));
             preparedStatement.setInt(5, cliente.getId());
-           preparedStatement.executeUpdate();
-
+            preparedStatement.executeUpdate();
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
 
         return cliente;
     }
@@ -75,12 +71,9 @@ public class ClienteDAO implements IClienteDAO {
             preparedStatement.setInt(1, id);
             preparedStatement.executeUpdate();
 
-
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
-
     }
 
     @Override
@@ -120,21 +113,19 @@ public class ClienteDAO implements IClienteDAO {
         try (Connection connection = ConnectionFactory.getConnection()) {
             PreparedStatement preparedStatement = connection.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
 
-            preparedStatement.executeQuery();
-            ResultSet rs = preparedStatement.getResultSet();
+            ResultSet rs = preparedStatement.executeQuery();
 
             while (rs.next()) {
-              int id =   rs.getInt("id");
-              String nome =   rs.getString("nome");
-              String email =   rs.getString("email");
-              String senha =   rs.getString("senha");
-              Pagamento pagamento = Pagamento.valueOf(rs.getString("pagamento"));
+                int id =   rs.getInt("id");
+                String nome =   rs.getString("nome");
+                String email =   rs.getString("email");
+                String senha =   rs.getString("senha");
+                Pagamento pagamento = Pagamento.valueOf(rs.getString("pagamento"));
 
-              Cliente  cliente  = new Cliente(id,nome,email,senha,pagamento);
-              clientes.add(cliente);
+                Cliente  cliente  = new Cliente(id,nome,email,senha,pagamento);
+                clientes.add(cliente);
 
             }
-
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -201,7 +192,6 @@ public class ClienteDAO implements IClienteDAO {
         return clientes;
     }
 
-
     @Override
     public List<Cliente> orderedByBubbleSortName() {
         List<Cliente> clientes = findAll(); // Busca todos os clientes do banco de dados
@@ -211,9 +201,7 @@ public class ClienteDAO implements IClienteDAO {
 
         for (int i = 0; i < n - 1; i++) {
             for (int j = 0; j < n - i - 1; j++) {
-                // Compara os nomes em ordem alfabética ignorando maiúsculas/minúsculas
                 if (clientes.get(j).getNome().compareToIgnoreCase(clientes.get(j + 1).getNome()) > 0) {
-                    // Troca de posição se o nome atual for maior que o próximo nome na ordem alfabética
                     temp = clientes.get(j);
                     clientes.set(j, clientes.get(j + 1));
                     clientes.set(j + 1, temp);
@@ -252,7 +240,4 @@ public class ClienteDAO implements IClienteDAO {
         }
         return clientes;
     }
-
-
-
 }

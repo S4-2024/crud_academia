@@ -2,6 +2,8 @@ package br.com.gym;
 
 import java.util.Date;
 
+import br.com.enums.Type;
+
 public class FichaCliente {
     private int id;
     private int idCliente;
@@ -9,8 +11,20 @@ public class FichaCliente {
     private String notas;
 
     // Construtores, getters e setters
-    public FichaCliente() {
+    public FichaCliente(int id, String nomeAluno, String nomeTreinador, double pesoInicial, Date dataCriacao, Type tipo, String[] exerciciosInferiores, String[] exerciciosPosteriores, String[] exerciciosSuperiores, String[] exerciciosCore, int idCliente) {
+        this.id = id;
+        this.nomeAluno = nomeAluno;
+        this.nomeTreinador = nomeTreinador;
+        this.pesoInicial = pesoInicial;
+        this.dataCriacao = dataCriacao;
+        this.tipo = tipo;
+        this.exerciciosInferiores = exerciciosInferiores;
+        this.exerciciosPosteriores = exerciciosPosteriores;
+        this.exerciciosSuperiores = exerciciosSuperiores;
+        this.exerciciosCore = exerciciosCore;
+        this.idCliente = idCliente;
     }
+    
 
     public FichaCliente(int idCliente, Date data, String notas) {
         this.idCliente = idCliente;
