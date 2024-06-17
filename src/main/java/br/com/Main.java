@@ -95,6 +95,7 @@ public class Main {
 
                 JPanel buttonsPanel = new JPanel();
                 buttonsPanel.add(new JLabel("Bem-vindo, " + logadoFuncionario.getNome()));
+                buttonsPanel.setLayout(new GridLayout(0, 1));
 
                 JButton listarClientesButton = new JButton("Listar Clientes");
                 JButton acessarFichaButton = new JButton("Acessar Ficha do Cliente");
@@ -331,9 +332,9 @@ public class Main {
         } catch (Exception ex) {
           showError("Erro ao listar clientes: " + ex.getMessage());
         }
-      }      
+    }      
 
-      private static void ordenarClientesPorId(ClienteDAO clienteDAO, DefaultTableModel model) {
+    private static void ordenarClientesPorId(ClienteDAO clienteDAO, DefaultTableModel model) {
         try {
           List<Cliente> clientesOrdenados = clienteDAO.ordenarPorId(); // Fetch clients sorted by ID
       
@@ -348,9 +349,8 @@ public class Main {
         } catch (Exception ex) {
           showError("Erro ao ordenar clientes por ID: " + ex.getMessage());
         }
-      }
+    }
       
-
     private static void returnToMainMenu() {
         panel.removeAll();
 

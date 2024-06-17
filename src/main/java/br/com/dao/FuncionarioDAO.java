@@ -18,6 +18,12 @@ import javax.swing.JOptionPane;
 
 public class FuncionarioDAO implements IFuncionarioDAO {
 
+    private ClienteDAO clienteDAO;
+
+    public FuncionarioDAO() {
+        this.clienteDAO = new ClienteDAO(); 
+    }
+
     @Override
     public Funcionario save(Funcionario funcionario) {
         try (Connection connection = ConnectionFactory.getConnection()) {
@@ -108,11 +114,11 @@ public class FuncionarioDAO implements IFuncionarioDAO {
     }
 
     public List<Cliente> accessCustomerList(int idClienteFicha) throws SQLException {
-        return ClienteDAO.findAll();
+        return clienteDAO.findAll();
     }
 
     public void accessCustomerFile(String customerId) throws SQLException {
-        Optional<Cliente> optionalCliente = ClienteDAO.findById(Integer.parseInt(customerId));
+        Optional<Cliente> optionalCliente = clienteDAO.findById(Integer.parseInt(customerId));
         if (optionalCliente.isPresent()) {
             Cliente cliente = optionalCliente.get();
             JOptionPane.showMessageDialog(null, cliente.toString());
@@ -159,7 +165,7 @@ public class FuncionarioDAO implements IFuncionarioDAO {
             Pagamento pagamento = Pagamento.valueOf(JOptionPane.showInputDialog("Digite o tipo de pagamento:"));
 
             Cliente cliente = new Cliente(0, nome, email, senha, pagamento);
-            ClienteDAO.save(cliente);
+            clienteDAO.save(cliente);
             JOptionPane.showMessageDialog(null, "Cliente adicionado com sucesso!");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Erro ao adicionar cliente: " + e.getMessage());
@@ -167,9 +173,10 @@ public class FuncionarioDAO implements IFuncionarioDAO {
     }
 
     public void atualizarCliente() {
+
         try {
             int id = Integer.parseInt(JOptionPane.showInputDialog("Digite o ID do cliente:"));
-            Optional<Cliente> optionalCliente = ClienteDAO.findById(id);
+            Optional<Cliente> optionalCliente = clienteDAO.findById(id);
             if (optionalCliente.isPresent()) {
                 Cliente cliente = optionalCliente.get();
                 String nome = JOptionPane.showInputDialog("Digite o novo nome do cliente:", cliente.getNome());
@@ -182,7 +189,7 @@ public class FuncionarioDAO implements IFuncionarioDAO {
                 cliente.setEmail(email);
                 cliente.setSenha(senha);
                 cliente.setPagamento(pagamento);
-                ClienteDAO.update(cliente);
+                clienteDAO.update(cliente);
                 JOptionPane.showMessageDialog(null, "Cliente atualizado com sucesso!");
             } else {
                 JOptionPane.showMessageDialog(null, "Cliente não encontrado!");
@@ -193,9 +200,10 @@ public class FuncionarioDAO implements IFuncionarioDAO {
     }
 
     public void excluirCliente() {
+
         try {
             int id = Integer.parseInt(JOptionPane.showInputDialog("Digite o ID do cliente:"));
-            ClienteDAO.delete(id);
+            clienteDAO.delete(id);
             JOptionPane.showMessageDialog(null, "Cliente excluído com sucesso!");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Erro ao excluir cliente: " + e.getMessage());
