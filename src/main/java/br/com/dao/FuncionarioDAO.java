@@ -129,8 +129,7 @@ public class FuncionarioDAO implements IFuncionarioDAO {
 
     public void adicionarFicha() {
         try {
-            // Obter os dados necessários para criar uma ficha
-            int id = 0; // Não passar id ao criar uma nova ficha
+            int id = 0; 
             String nomeAluno = JOptionPane.showInputDialog("Digite o nome do aluno:");
             String nomeTreinador = JOptionPane.showInputDialog("Digite o nome do treinador:");
             double pesoInicial = Double.parseDouble(JOptionPane.showInputDialog("Digite o peso inicial:"));
@@ -234,7 +233,7 @@ public class FuncionarioDAO implements IFuncionarioDAO {
             AgendamentosDAO agendamentoDao = new AgendamentosDAO(ConnectionFactory.getConnection());
             try {
                 agenda = agendamentoDao.findByFuncionario(funcionario);
-                if (!agenda.isEmpty()) { // Verifica se a lista não está vazia
+                if (!agenda.isEmpty()) {
                     StringBuilder sb = new StringBuilder();
                     sb.append("Agenda do Funcionário ").append(funcionario.getNome()).append(":\n\n");
     
@@ -261,7 +260,7 @@ public class FuncionarioDAO implements IFuncionarioDAO {
         } else {
             showError("Você precisa estar logado para visualizar a agenda!");
         }
-        return agenda; // Retornar a lista de agendamentos
+        return agenda;
     }
             
     public void adicionarAvaliacao(Funcionario funcionario, AgendamentosDAO agendamentoDao) {
@@ -269,7 +268,6 @@ public class FuncionarioDAO implements IFuncionarioDAO {
             try (Connection connection = ConnectionFactory.getConnection()) {
                 Agendamentos novoAgendamento = new Agendamentos();
                 novoAgendamento.setIdFuncionario(funcionario.getId());
-                // Aqui você pode adicionar outras informações ao novo agendamento
 
                 agendamentoDao.create(novoAgendamento);
 
@@ -296,16 +294,13 @@ public class FuncionarioDAO implements IFuncionarioDAO {
 
                 while (resultSet.next()) {
                     int id = resultSet.getInt("id");
-                    // Extrair outras informações do agendamento conforme necessário
                     Agendamentos avaliacao = new Agendamentos(id);
                     avaliacoes.add(avaliacao);
                 }
 
                 if (!avaliacoes.isEmpty()) {
-                    // Mostrar as avaliações na interface ou em outro lugar conforme necessário
                     for (Agendamentos avaliacao : avaliacoes) {
                         System.out.println("ID da avaliação: " + avaliacao.getId());
-                        // Exibir outras informações da avaliação conforme necessário
                     }
                 } else {
                     JOptionPane.showMessageDialog(null, "Nenhuma avaliação encontrada.", "Aviso",
@@ -323,9 +318,26 @@ public class FuncionarioDAO implements IFuncionarioDAO {
         JOptionPane.showMessageDialog(null, message, "Erro", JOptionPane.ERROR_MESSAGE);
     }
 
-    public Optional<Cliente> findById(int idFuncionario) {
-        return null;
-        
+    public Optional<Funcionario> findById(int id) {
+        String sql = "SELECT id, nome, cpf, email, senha FROM Funcionarios WHERE id = ?";
+        Funcionario funcionario = null;
+        try (Connection connection = ConnectionFactory.getConnection()) {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, id);
+            ResultSet rs = preparedStatement.executeQuery();
+
+            if (rs.next()) {
+                String nome = rs.getString("nome");
+                String cpf = rs.getString("cpf");
+                String email = rs.getString("email");
+                String senha = rs.getString("senha");
+
+                funcionario = new Funcionario(id, nome, cpf, email, senha);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return Optional.ofNullable(funcionario);
     }
 
 }
