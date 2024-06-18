@@ -1,7 +1,11 @@
 <img src="https://github.com/S4-2024/crud_academia/blob/master/images/Cópia%20de%20Cópia%20de%20ESTRUTURAS%20DE%20DADOS%20E%20ALGORITMOS.png">
 
-<h4 align="center"> <em> Este projeto implementa um sistema CRUD (Create, Read, Update, Delete) para gerenciar uma academia. O sistema é desenvolvido em Java e utiliza uma estrutura baseada em DAO (Data Access Object) para gerenciar as operações no banco de dados. </em></h4>
+<h4 align="justify"> <em> Este projeto implementa um sistema CRUD (Create, Read, Update, Delete) para gerenciar uma academia. O sistema é desenvolvido em Java e utiliza uma estrutura baseada em DAO (Data Access Object) para gerenciar as operações no banco de dados. </em></h4>
 
+<h3 align="center ">
+  
+  [![códigos](https://img.shields.io/badge/códigos-558BB3?style=for-the-badge&logo=github)](https://github.com/S4-2024/crud_academia/tree/master/src/main/java/br/com)
+</h3>
 
 ## Visão Geral
 
