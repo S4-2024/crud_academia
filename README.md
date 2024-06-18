@@ -12,7 +12,7 @@
 O sistema permite a gestão de clientes, funcionários, agendamentos, avaliações, exercícios e fichas de clientes. A estrutura do projeto inclui modelos, interfaces, DAOs e scripts SQL para a criação e preenchimento do banco de dados.
 
 <details>
-<summary> <h2> 🔹 Estrutura do Projeto </h2></summary>
+<summary> <h2> 🔹 Paths do Projeto </h2></summary>
 
 
 
@@ -72,9 +72,17 @@ O sistema permite a gestão de clientes, funcionários, agendamentos, avaliaçõ
 
 O projeto inclui dois scripts SQL no diretório `banco_dados/`:
 
-1. `banco_dados_crud.sql`: Cria as tabelas necessárias no banco de dados.
-2. `bd_preenchido.sql`: Preenche as tabelas com dados de exemplo.
+1. `banco_dados_crud.sql`: Primeira versão do banco de dados
+2. `bd_preenchido.sql`: Segunda versão do banco de dados e preenchido.
+3. `crud_preenchido.sql`: Terceira versão do banco de dados e preenchido.
+4. `atualização_bd.sql`: Versão final do banco de dados.
 
+
+
+ </details>
+
+<details>
+<summary> <h2> 🔹 Estrutura padrão do projeto </h2></summary>
 
 ## Introdução ao Padrão DAO
 O padrão DAO (Data Access Object) é um padrão de design que abstrai e encapsula o acesso a dados, oferecendo uma interface simples para executar operações de persistência em um banco de dados. Ele separa a lógica de negócios da lógica de acesso a dados, permitindo que as operações no banco de dados sejam realizadas de maneira desacoplada do restante da aplicação.
@@ -107,29 +115,31 @@ public interface IClienteDAO {
     void deletarCliente(int id);
 }
 ```
-  
+
+</details>
+
+
+ <details> 
+ <summary> <h2>🟢 Como Executar o Projeto </h2></summary>
    
- </details>
-
- 
-
-
-## 🟢 Como Executar o Projeto
-
-1. **Pré-requisitos**:
+ 1. **Pré-requisitos**:
    - JDK 8 ou superior.
    - Maven.
-   - Um banco de dados SQL (por exemplo, MySQL).
+   -  Banco de dados SQL (por exemplo, MySQL).
 
 2. **Configuração do Banco de Dados**:
-   - Execute o script `banco_dados/banco_dados_crud.sql` para criar as tabelas.
-   - Execute o script `banco_dados/bd_preenchido.sql` para preencher o banco de dados com dados de exemplo.
+   - Execute o script `atualização_bd.sql` para ter acesso ao banco de dados.
 
 3. **Compilar e Executar**:
    - Navegue até o diretório do projeto.
    - Execute `mvn clean install` para compilar o projeto.
    - Execute `java -cp target/crud_academia-master-1.0-SNAPSHOT.jar br.com.Main` para iniciar a aplicação.
+ </details>
 
-## Conclusão
+ 
+ <h4 align="center"> <em> Algum problema? entre em cotato </em></h4>
 
-Este projeto fornece uma implementação básica de um sistema CRUD para uma academia, utilizando Java e uma arquitetura baseada em DAOs. A estrutura modular facilita a manutenção e expansão do sistema conforme necessário.
+<div align="center" > 
+  
+![gabrielle.sote@gmail.com](https://img.shields.io/badge/gabrielle.sote%40gmail.com-B7D3DF?style=for-the-badge&logo=gmail&logoColor=black)
+</div>
