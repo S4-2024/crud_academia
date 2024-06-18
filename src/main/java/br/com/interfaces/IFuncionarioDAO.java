@@ -1,6 +1,5 @@
 package br.com.interfaces;
 
-import br.com.models.Cliente;
 import br.com.models.Funcionario;
 
 import java.util.Optional;

@@ -2,7 +2,7 @@ package br.com.dao;
 
 import br.com.enums.Pagamento;
 import br.com.gym.Agendamentos;
-import br.com.gym.FichaCliente;
+import br.com.gym.FichaTreinamento;
 import br.com.infra.ConnectionFactory;
 import br.com.interfaces.IFuncionarioDAO;
 import br.com.models.Cliente;
@@ -146,11 +146,11 @@ public class FuncionarioDAO implements IFuncionarioDAO {
                     .split(",");
             int idCliente = Integer.parseInt(JOptionPane.showInputDialog("Digite o ID do cliente:"));
 
-            FichaCliente fichaCliente = new FichaCliente(id, nomeAluno, nomeTreinador, pesoInicial, dataCriacao, tipo,
+            FichaTreinamento fichaCliente = new FichaTreinamento(id, nomeAluno, nomeTreinador, pesoInicial, dataCriacao, tipo,
                     exerciciosInferiores, exerciciosPosteriores, exerciciosSuperiores, exerciciosCore, idCliente);
 
-            FichasClienteDAO fichasClienteDAO = new FichasClienteDAO(ConnectionFactory.getConnection());
-            fichasClienteDAO.create(fichaCliente);
+            FichaTreinamentoDAO fichasClienteDAO = new FichaTreinamentoDAO(ConnectionFactory.getConnection());
+            fichasClienteDAO.adicionar(fichaCliente);
             JOptionPane.showMessageDialog(null, "Ficha adicionada com sucesso!");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Erro ao adicionar ficha: " + e.getMessage());
@@ -321,6 +321,11 @@ public class FuncionarioDAO implements IFuncionarioDAO {
 
     private void showError(String message) {
         JOptionPane.showMessageDialog(null, message, "Erro", JOptionPane.ERROR_MESSAGE);
+    }
+
+    public Optional<Cliente> findById(int idFuncionario) {
+        return null;
+        
     }
 
 }

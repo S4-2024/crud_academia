@@ -9,7 +9,6 @@ public class ConnectionFactory {
 
     public static Connection getConnection() {
         try {
-            // Carrega o driver JDBC explicitamente
             Class.forName("com.mysql.cj.jdbc.Driver");
             return DriverManager.getConnection("jdbc:mysql://localhost:3306/crud", "root", "admin");
         } catch (SQLException | ClassNotFoundException e) {

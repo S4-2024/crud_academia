@@ -3,8 +3,6 @@ package br.com.testes;
 import br.com.dao.FuncionarioDAO;
 import br.com.models.Funcionario;
 
-import static br.com.enums.Pagamento.valueOf;
-
 public class AdicionarFuncionario {
     public static void main(String[] args) {
 

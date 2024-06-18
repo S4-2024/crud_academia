@@ -1,8 +1,10 @@
 package br.com;
 
 import br.com.dao.ClienteDAO;
+import br.com.dao.FichaTreinamentoDAO;
 import br.com.dao.FuncionarioDAO;
 import br.com.gym.Agendamentos;
+import br.com.gym.FichaTreinamento;
 import br.com.models.Cliente;
 import br.com.models.Funcionario;
 
@@ -14,6 +16,7 @@ import java.awt.event.ActionListener;
 import java.sql.Date;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class Main {
     private static JFrame frame;
@@ -131,18 +134,6 @@ public class Main {
                     }
                 });
 
-                acessarFichaButton.addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-                        int idClienteFicha = Integer
-                                .parseInt(JOptionPane.showInputDialog(frame, "Digite o ID do cliente:"));
-                        try {
-                            dao.accessCustomerList(idClienteFicha);
-                        } catch (Exception ex) {
-                            showError("Erro ao acessar ficha do cliente: " + ex.getMessage());
-                        }
-                    }
-                });
-
                 agendarAvaliacaoButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         try {
@@ -163,7 +154,7 @@ public class Main {
                         }
                     }
                 });
-                
+
                 visualizarAgendaButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         try {
@@ -195,16 +186,6 @@ public class Main {
                             }
                         } catch (Exception ex) {
                             showError("Erro ao visualizar agenda: " + ex.getMessage());
-                        }
-                    }
-                });
-
-                adicionarFichaButton.addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-                        try {
-                            dao.adicionarFicha();
-                        } catch (Exception ex) {
-                            showError("Erro ao adicionar ficha: " + ex.getMessage());
                         }
                     }
                 });
@@ -259,23 +240,27 @@ public class Main {
                     }
                 });
 
+                acessarFichaButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        acessarFicha();
+                    }
+                });
+
+                adicionarFichaButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        adicionarFicha();
+                    }
+                });
+
                 adicionarTreinoButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-                        try {
-                            dao.adicionarTreino();
-                        } catch (Exception ex) {
-                            showError("Erro ao adicionar treino: " + ex.getMessage());
-                        }
+                        adicionarTreino();
                     }
                 });
 
                 visualizarTreinosButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-                        try {
-                            dao.visualizarTreinos();
-                        } catch (Exception ex) {
-                            showError("Erro ao visualizar treinos: " + ex.getMessage());
-                        }
+                        visualizarTreinos();
                     }
                 });
 
@@ -288,69 +273,69 @@ public class Main {
 
     private static void listarClientes() {
         try {
-          ClienteDAO clienteDAO = new ClienteDAO();
-          List<Cliente> clientes = clienteDAO.findAll();
-      
-          DefaultTableModel model = new DefaultTableModel();
-          model.addColumn("ID");
-          model.addColumn("Nome");
-          model.addColumn("Email");
-          model.addColumn("Estado de Pagamento");
-      
-          for (Cliente cliente : clientes) {
-            model.addRow(new Object[]{cliente.getId(), cliente.getNome(), cliente.getEmail(),
-                cliente.getPagamento()});
-          }
-      
-          JTable table = new JTable(model);
-      
-          JPanel tablePanel = new JPanel(new BorderLayout());
-          tablePanel.add(new JScrollPane(table), BorderLayout.CENTER);
-      
-          JButton ordenarPorNomeButton = new JButton("Ordenar por Nome");
-          JButton ordenarPorIdButton = new JButton("Ordenar por ID");
-          JButton buscarButton = new JButton("Buscar por Nome");
-          JButton voltarButton = new JButton("Voltar ao Menu Principal");
-      
-          JPanel buttonsPanel = new JPanel();
-          buttonsPanel.add(ordenarPorNomeButton);
-          buttonsPanel.add(ordenarPorIdButton);
-          buttonsPanel.add(buscarButton);
-          buttonsPanel.add(voltarButton);
-      
-          ordenarPorNomeButton.addActionListener(e -> ordenarClientes(clienteDAO, model));
-          ordenarPorIdButton.addActionListener(e -> ordenarClientesPorId(clienteDAO, model));
-          buscarButton.addActionListener(e -> buscarClientes(clienteDAO, model));
-          voltarButton.addActionListener(e -> returnToMainMenu());
-      
-          panel.removeAll();
-          panel.setLayout(new BorderLayout());
-          panel.add(buttonsPanel, BorderLayout.NORTH);
-          panel.add(tablePanel, BorderLayout.CENTER);
-      
-          frame.pack();
+            ClienteDAO clienteDAO = new ClienteDAO();
+            List<Cliente> clientes = clienteDAO.findAll();
+
+            DefaultTableModel model = new DefaultTableModel();
+            model.addColumn("ID");
+            model.addColumn("Nome");
+            model.addColumn("Email");
+            model.addColumn("Estado de Pagamento");
+
+            for (Cliente cliente : clientes) {
+                model.addRow(new Object[] { cliente.getId(), cliente.getNome(), cliente.getEmail(),
+                        cliente.getPagamento() });
+            }
+
+            JTable table = new JTable(model);
+
+            JPanel tablePanel = new JPanel(new BorderLayout());
+            tablePanel.add(new JScrollPane(table), BorderLayout.CENTER);
+
+            JButton ordenarPorNomeButton = new JButton("Ordenar por Nome");
+            JButton ordenarPorIdButton = new JButton("Ordenar por ID");
+            JButton buscarButton = new JButton("Buscar por Nome");
+            JButton voltarButton = new JButton("Voltar ao Menu Principal");
+
+            JPanel buttonsPanel = new JPanel();
+            buttonsPanel.add(ordenarPorNomeButton);
+            buttonsPanel.add(ordenarPorIdButton);
+            buttonsPanel.add(buscarButton);
+            buttonsPanel.add(voltarButton);
+
+            ordenarPorNomeButton.addActionListener(e -> ordenarClientes(clienteDAO, model));
+            ordenarPorIdButton.addActionListener(e -> ordenarClientesPorId(clienteDAO, model));
+            buscarButton.addActionListener(e -> buscarClientes(clienteDAO, model));
+            voltarButton.addActionListener(e -> returnToMainMenu());
+
+            panel.removeAll();
+            panel.setLayout(new BorderLayout());
+            panel.add(buttonsPanel, BorderLayout.NORTH);
+            panel.add(tablePanel, BorderLayout.CENTER);
+
+            frame.pack();
         } catch (Exception ex) {
-          showError("Erro ao listar clientes: " + ex.getMessage());
+            showError("Erro ao listar clientes: " + ex.getMessage());
         }
-    }      
+    }
 
     private static void ordenarClientesPorId(ClienteDAO clienteDAO, DefaultTableModel model) {
         try {
-          List<Cliente> clientesOrdenados = clienteDAO.ordenarPorId(); // Fetch clients sorted by ID
-      
-          model.setRowCount(0); // Clear existing rows
-      
-          for (Cliente cliente : clientesOrdenados) {
-            model.addRow(new Object[]{cliente.getId(), cliente.getNome(), cliente.getEmail(),
-                cliente.getPagamento()});
-          }
-      
-          frame.pack();
+            List<Cliente> clientesOrdenados = clienteDAO.ordenarPorId();
+
+            model.setRowCount(0);
+
+            for (Cliente cliente : clientesOrdenados) {
+                model.addRow(new Object[] { cliente.getId(), cliente.getNome(), cliente.getEmail(),
+                        cliente.getPagamento() });
+            }
+
+            frame.pack();
         } catch (Exception ex) {
-          showError("Erro ao ordenar clientes por ID: " + ex.getMessage());
+            showError("Erro ao ordenar clientes por ID: " + ex.getMessage());
         }
     }
-      
+
     private static void returnToMainMenu() {
         panel.removeAll();
 
@@ -420,4 +405,144 @@ public class Main {
         ClienteDAO clienteDAO = new ClienteDAO();
         return clienteDAO.findById(idCliente).isPresent();
     }
+
+    private static void acessarFicha() {
+        try {
+            int clienteId = Integer.parseInt(JOptionPane.showInputDialog("Digite o ID do cliente:"));
+
+            FichaTreinamentoDAO fichaDAO = new FichaTreinamentoDAO();
+            List<FichaTreinamento> fichas = fichaDAO.listarTodos();
+            List<FichaTreinamento> fichasCliente = fichas.stream()
+                    .filter(f -> f.getClienteId() == clienteId)
+                    .collect(Collectors.toList());
+
+            if (fichasCliente.isEmpty()) {
+                showError("Nenhuma ficha encontrada para o cliente com ID " + clienteId);
+                return;
+            }
+
+            DefaultTableModel model = new DefaultTableModel();
+            model.addColumn("ID");
+            model.addColumn("Cliente ID");
+            model.addColumn("Cliente Nome");
+            model.addColumn("Exercício Nome");
+            model.addColumn("Exercício ID");
+            model.addColumn("Anotação");
+
+            for (FichaTreinamento ficha : fichasCliente) {
+                model.addRow(new Object[] { ficha.getId(), ficha.getClienteId(), ficha.getClienteNome(),
+                        ficha.getExercicioNome(), ficha.getExercicioId(), ficha.getAnotacao() });
+            }
+
+            JTable table = new JTable(model);
+            JScrollPane scrollPane = new JScrollPane(table);
+
+            JPanel newPanel = new JPanel();
+            newPanel.setLayout(new BorderLayout());
+            newPanel.add(scrollPane, BorderLayout.CENTER);
+
+            frame.getContentPane().removeAll();
+            frame.getContentPane().add(newPanel);
+            frame.revalidate();
+            frame.repaint();
+        } catch (Exception ex) {
+            showError("Erro ao acessar ficha: " + ex.getMessage());
+        }
+    }
+
+    private static void adicionarFicha() {
+        try {
+            int clienteId = Integer.parseInt(JOptionPane.showInputDialog("Digite o ID do cliente:"));
+            String clienteNome = JOptionPane.showInputDialog("Digite o nome do cliente:");
+            String exercicioNome = JOptionPane.showInputDialog("Digite o nome do exercício:");
+            int exercicioId = Integer.parseInt(JOptionPane.showInputDialog("Digite o ID do exercício:"));
+            String anotacao = JOptionPane.showInputDialog("Digite a anotação:");
+
+            FichaTreinamento ficha = new FichaTreinamento();
+            ficha.setClienteId(clienteId);
+            ficha.setClienteNome(clienteNome);
+            ficha.setExercicioNome(exercicioNome);
+            ficha.setExercicioId(exercicioId);
+            ficha.setAnotacao(anotacao);
+
+            FichaTreinamentoDAO fichaDAO = new FichaTreinamentoDAO();
+            fichaDAO.adicionar(ficha);
+
+            JOptionPane.showMessageDialog(frame, "Ficha adicionada com sucesso.");
+        } catch (Exception ex) {
+            showError("Erro ao adicionar ficha: " + ex.getMessage());
+        }
+    }
+
+    private static void adicionarTreino() {
+        try {
+            int fichaId = Integer.parseInt(JOptionPane.showInputDialog("Digite o ID da ficha:"));
+            String exercicioNome = JOptionPane.showInputDialog("Digite o nome do exercício:");
+            int exercicioId = Integer.parseInt(JOptionPane.showInputDialog("Digite o ID do exercício:"));
+            String anotacao = JOptionPane.showInputDialog("Digite a anotação:");
+
+            FichaTreinamentoDAO fichaDAO = new FichaTreinamentoDAO();
+            FichaTreinamento ficha = fichaDAO.buscarPorId(fichaId);
+
+            if (ficha == null) {
+                showError("Ficha com ID " + fichaId + " não encontrada.");
+                return;
+            }
+
+            ficha.setExercicioNome(exercicioNome);
+            ficha.setExercicioId(exercicioId);
+            ficha.setAnotacao(anotacao);
+
+            fichaDAO.atualizar(ficha);
+
+            JOptionPane.showMessageDialog(frame, "Treino adicionado com sucesso.");
+        } catch (Exception ex) {
+            showError("Erro ao adicionar treino: " + ex.getMessage());
+        }
+    }
+
+    private static void visualizarTreinos() {
+        try {
+            int clienteId = Integer.parseInt(JOptionPane.showInputDialog("Digite o ID do cliente:"));
+
+            FichaTreinamentoDAO fichaDAO = new FichaTreinamentoDAO();
+            List<FichaTreinamento> fichas = fichaDAO.listarTodos();
+            List<FichaTreinamento> fichasCliente = fichas.stream()
+                    .filter(f -> f.getClienteId() == clienteId)
+                    .collect(Collectors.toList());
+
+            if (fichasCliente.isEmpty()) {
+                showError("Nenhum treino encontrado para o cliente com ID " + clienteId);
+                return;
+            }
+
+            DefaultTableModel model = new DefaultTableModel();
+            model.addColumn("ID");
+            model.addColumn("Cliente ID");
+            model.addColumn("Cliente Nome");
+            model.addColumn("Exercício Nome");
+            model.addColumn("Exercício ID");
+            model.addColumn("Anotação");
+
+            for (FichaTreinamento ficha : fichasCliente) {
+                model.addRow(new Object[] { ficha.getId(), ficha.getClienteId(), ficha.getClienteNome(),
+                        ficha.getExercicioNome(), ficha.getExercicioId(), ficha.getAnotacao() });
+            }
+
+            JTable table = new JTable(model);
+            JScrollPane scrollPane = new JScrollPane(table);
+
+            JPanel newPanel = new JPanel();
+            newPanel.setLayout(new BorderLayout());
+            newPanel.add(scrollPane, BorderLayout.CENTER);
+
+            frame.getContentPane().removeAll();
+            frame.getContentPane().add(newPanel);
+            frame.revalidate();
+            frame.repaint();
+        } catch (Exception ex) {
+            showError("Erro ao visualizar treinos: " + ex.getMessage());
+        }
+    }
+
 }

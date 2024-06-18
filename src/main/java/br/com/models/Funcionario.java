@@ -1,6 +1,5 @@
 package br.com.models;
 
-import java.io.Serializable;
 
 public class Funcionario extends Pessoa{
     private  String cpf;
