@@ -14,7 +14,7 @@ O sistema permite a gestão de clientes, funcionários, agendamentos, avaliaçõ
 <details>
 <summary> <h2> 🔹 Estrutura do Projeto </h2></summary>
 
-A estrutura do projeto é a seguinte:
+
 
 - **Raiz do Projeto**
   - `.gitignore`: Arquivo para ignorar arquivos/diretórios no controle de versão.
