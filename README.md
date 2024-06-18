@@ -1,12 +1,14 @@
-# CRUD Academia
+<img src="https://github.com/S4-2024/crud_academia/blob/master/images/Cópia%20de%20Cópia%20de%20ESTRUTURAS%20DE%20DADOS%20E%20ALGORITMOS.png">
 
-Este projeto implementa um sistema CRUD (Create, Read, Update, Delete) para gerenciar uma academia. O sistema é desenvolvido em Java e utiliza uma estrutura baseada em DAO (Data Access Object) para gerenciar as operações no banco de dados.
+<h4 align="center"> <em> Este projeto implementa um sistema CRUD (Create, Read, Update, Delete) para gerenciar uma academia. O sistema é desenvolvido em Java e utiliza uma estrutura baseada em DAO (Data Access Object) para gerenciar as operações no banco de dados. </em></h4>
+
 
 ## Visão Geral
 
 O sistema permite a gestão de clientes, funcionários, agendamentos, avaliações, exercícios e fichas de clientes. A estrutura do projeto inclui modelos, interfaces, DAOs e scripts SQL para a criação e preenchimento do banco de dados.
 
-## Estrutura do Projeto
+<details>
+<summary> <h2> 🔹 Estrutura do Projeto </h2></summary>
 
 A estrutura do projeto é a seguinte:
 
@@ -56,7 +58,13 @@ A estrutura do projeto é a seguinte:
       - `src/test/java/AppTest.java`: Teste para a aplicação exemplo.
   - `.idea/`: Diretório de configuração do IntelliJ IDEA.
 
-## Banco de Dados
+  
+</details>
+
+
+ <details>
+   
+  <summary> <h2>🔹Banco de Dados </h2></summary>
 
 O projeto inclui dois scripts SQL no diretório `banco_dados/`:
 
@@ -95,8 +103,14 @@ public interface IClienteDAO {
     void deletarCliente(int id);
 }
 ```
+  
+   
+ </details>
 
-## Como Executar o Projeto
+ 
+
+
+## 🟢 Como Executar o Projeto
 
 1. **Pré-requisitos**:
    - JDK 8 ou superior.
