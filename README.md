@@ -8,8 +8,7 @@
 
 <h3 align="center ">
   
-  [![códigos](https://img.shields.io/badge/códigos-558BB3?style=for-the-badge&logo=github)](https://github.com/S4-2024/crud_academia/tree/master/src/main/java/br/com)
-</h3>
+[![CÓDIGOS ](https://img.shields.io/badge/CÓDIGOS_-2ea44f?style=for-the-badge&logo=GITHUB)](https://github.com/S4-2024/crud_academia/tree/Atualizacao-Anna)</h3>
 
 ## Visão Geral
 
