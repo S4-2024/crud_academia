@@ -1,14 +1,23 @@
-# CRUD Academia
+<img src="https://github.com/S4-2024/crud_academia/blob/master/images/Cópia%20de%20Cópia%20de%20ESTRUTURAS%20DE%20DADOS%20E%20ALGORITMOS.png">
 
-Este projeto implementa um sistema CRUD (Create, Read, Update, Delete) para gerenciar uma academia. O sistema é desenvolvido em Java e utiliza uma estrutura baseada em DAO (Data Access Object) para gerenciar as operações no banco de dados.
+
+
+ 
+
+<h4 align="justify"> <em> Este projeto implementa um sistema CRUD (Create, Read, Update, Delete) para gerenciar uma academia. O sistema é desenvolvido em Java e utiliza uma estrutura baseada em DAO (Data Access Object) para gerenciar as operações no banco de dados. </em></h4>
+
+<h3 align="center ">
+  
+[![CÓDIGOS ](https://img.shields.io/badge/CÓDIGOS_-2ea44f?style=for-the-badge&logo=GITHUB)](https://github.com/S4-2024/crud_academia/tree/Atualizacao-Anna)</h3>
 
 ## Visão Geral
 
 O sistema permite a gestão de clientes, funcionários, agendamentos, avaliações, exercícios e fichas de clientes. A estrutura do projeto inclui modelos, interfaces, DAOs e scripts SQL para a criação e preenchimento do banco de dados.
 
-## Estrutura do Projeto
+<details>
+<summary> <h2> 🔹 Paths do Projeto </h2></summary>
 
-A estrutura do projeto é a seguinte:
+
 
 - **Raiz do Projeto**
   - `.gitignore`: Arquivo para ignorar arquivos/diretórios no controle de versão.
@@ -56,13 +65,27 @@ A estrutura do projeto é a seguinte:
       - `src/test/java/AppTest.java`: Teste para a aplicação exemplo.
   - `.idea/`: Diretório de configuração do IntelliJ IDEA.
 
-## Banco de Dados
+  
+</details>
+
+
+ <details>
+   
+  <summary> <h2>🔹Banco de Dados </h2></summary>
 
 O projeto inclui dois scripts SQL no diretório `banco_dados/`:
 
-1. `banco_dados_crud.sql`: Cria as tabelas necessárias no banco de dados.
-2. `bd_preenchido.sql`: Preenche as tabelas com dados de exemplo.
+1. `banco_dados_crud.sql`: Primeira versão do banco de dados
+2. `bd_preenchido.sql`: Segunda versão do banco de dados e preenchido.
+3. `crud_preenchido.sql`: Terceira versão do banco de dados e preenchido.
+4. `atualização_bd.sql`: Versão final do banco de dados.
 
+
+
+ </details>
+
+<details>
+<summary> <h2> 🔹 Estrutura padrão do projeto </h2></summary>
 
 ## Introdução ao Padrão DAO
 O padrão DAO (Data Access Object) é um padrão de design que abstrai e encapsula o acesso a dados, oferecendo uma interface simples para executar operações de persistência em um banco de dados. Ele separa a lógica de negócios da lógica de acesso a dados, permitindo que as operações no banco de dados sejam realizadas de maneira desacoplada do restante da aplicação.
@@ -96,22 +119,45 @@ public interface IClienteDAO {
 }
 ```
 
-## Como Executar o Projeto
+</details>
 
-1. **Pré-requisitos**:
+
+ <details> 
+ <summary> <h2>🟢 Como Executar o Projeto </h2></summary>
+   
+ 1. **Pré-requisitos**:
    - JDK 8 ou superior.
    - Maven.
-   - Um banco de dados SQL (por exemplo, MySQL).
+   -  Banco de dados SQL (por exemplo, MySQL).
 
 2. **Configuração do Banco de Dados**:
-   - Execute o script `banco_dados/banco_dados_crud.sql` para criar as tabelas.
-   - Execute o script `banco_dados/bd_preenchido.sql` para preencher o banco de dados com dados de exemplo.
+   - Execute o script `atualização_bd.sql` para ter acesso ao banco de dados.
 
 3. **Compilar e Executar**:
    - Navegue até o diretório do projeto.
    - Execute `mvn clean install` para compilar o projeto.
    - Execute `java -cp target/crud_academia-master-1.0-SNAPSHOT.jar br.com.Main` para iniciar a aplicação.
+ </details>
 
-## Conclusão
+ 
 
-Este projeto fornece uma implementação básica de um sistema CRUD para uma academia, utilizando Java e uma arquitetura baseada em DAOs. A estrutura modular facilita a manutenção e expansão do sistema conforme necessário.
+
+<div >
+  <h2 >🧙‍♂️Membros </h2>
+  
+[![Gabrielle Soares- 422221763](https://img.shields.io/badge/Gabrielle_Soares-422221763-pink?style=for-the-badge&logo=github&logoColor=pink)](https://github.com/gabriellesote)
+[![ Anna Clara - 422142003](https://img.shields.io/static/v1?label=+Anna+Clara&message=422142003&color=C683D7&style=for-the-badge&logo=github&logoColor=C683D7)](https://github.com/byasun)
+[![Lucas Rodrigues - 422222503](https://img.shields.io/badge/Lucas_Rodrigues-422222503-blue?style=for-the-badge&logo=github&logoColor=blue)](https://github.com/LucasRramos)
+[![Ryan Freitas -  422137686](https://img.shields.io/badge/Ryan_Freitas-_422137686-2D9596?style=for-the-badge&logo=github&logoColor=ECF4D6)](https://github.com/Rzin-lg)
+[![Gabriel Bernardes - 422222195](https://img.shields.io/static/v1?label=Gabriel+Bernardes&message=422222195&color=0f6103&style=for-the-badge&logo=github&logoColor=0f6103)](https://github.com/Gabber28)
+
+
+
+</div>
+
+
+ <h4 align="center"> <em>   ¨*:·. Algum problema? Entre em cotato .·:*¨  </em></h4>
+<div align="center" > 
+  
+![gabrielle.sote@gmail.com](https://img.shields.io/badge/gabrielle.sote%40gmail.com-B7D3DF?style=for-the-badge&logo=gmail&logoColor=black)
+</div>
