@@ -156,7 +156,7 @@ public interface IClienteDAO {
 </div>
 
 
- <h4 align="center"> <em>   ¨*:·. Algum problema? Entre em cotato .·:*¨  </em></h4>
+ <h4 align="center"> <em>   ¨*:·. Algum problema? Entre em contato .·:*¨  </em></h4>
 <div align="center" > 
   
 ![gabrielle.sote@gmail.com](https://img.shields.io/badge/gabrielle.sote%40gmail.com-B7D3DF?style=for-the-badge&logo=gmail&logoColor=black)
